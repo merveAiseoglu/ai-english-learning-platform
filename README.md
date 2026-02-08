@@ -7,24 +7,28 @@
 
 An interactive web application for learning English with **AI-powered features**, built with **Angular 18** and **Node.js**.
 
-![Banner](docs/images/banner.png)
+![Banner](docs/banner.png)
 
 ## 🚀 Features
 
 - **📚 Vocabulary Learning** - Spaced repetition flashcards with progress tracking
-![Vocabulary](docs/images/vocabulary.png)
+![Vocabulary](docs/vocabulary.png)
+
 - **🎧 Listening Practice** - Audio exercises with playback speed control
-![Listening](docs/images/listening.png)
+![Listening](docs/listening.png)
+
 - **✍️ Writing Practice** - AI grammar correction and writing prompts via GPT-3.5
-![Writing](docs/images/writing.png)
+![Writing](docs/writing.png) 
 - **🗣️ Speaking Practice** - Uses OpenAI Whisper for high-accuracy speech-to-text conversion and compares user input with target phrases.
-![Speaking](docs/images/speaking.png)
+![Speaking](docs/speaking.png)
+
 - **📖 Reading Comprehension** - Interactive texts with instant word translation
-![Reading](docs/images/reading.png)
+![Reading](docs/reading.PNG)
 - **📝 Grammar Lessons** - Structured grammar topics with interactive exercises
-![Grammar](docs/images/grammar.png)
+![Grammar](docs/grammar.png)
+
 - **📊 Progress Dashboard** - Track your daily statistics and learning streak
-![Dashboard](docs/images/dashboard.png)
+![Dashboard](docs/dashboard.PNG)
 ## 🛠️ Tech Stack
 
 ### Frontend
