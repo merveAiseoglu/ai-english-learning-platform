@@ -1,0 +1,1787 @@
+{
+  "levels": [
+    {
+      "id": "beginner",
+      "name": "Başlangıç",
+      "description": "Temel gramer kuralları",
+      "order": 1
+    },
+    {
+      "id": "intermediate",
+      "name": "Orta Seviye",
+      "description": "Orta düzey gramer yapıları",
+      "order": 2
+    },
+    {
+      "id": "advanced",
+      "name": "İleri Seviye",
+      "description": "Karmaşık gramer kuralları ve istisnalar",
+      "order": 3
+    }
+  ],
+  "topics": [
+    {
+      "id": "simple-present",
+      "levelId": "beginner",
+      "title": "Simple Present Tense (Geniş Zaman)",
+      "description": "Günlük alışkanlıklar, genel gerçekler ve düzenli eylemlerden bahsetme.",
+      "order": 1,
+      "estimatedTime": 20
+    },
+    {
+      "id": "to-be-verb",
+      "levelId": "beginner",
+      "title": "To Be Fiili (Olmak Fiili)",
+      "description": "Kişi zamirleri ile 'am, is, are' kullanımı ve kendini tanıtma.",
+      "order": 2,
+      "estimatedTime": 15
+    },
+    {
+      "id": "present-continuous",
+      "levelId": "beginner",
+      "title": "Present Continuous Tense (Şimdiki Zaman)",
+      "description": "Şu an gerçekleşen eylemlerden bahsetme.",
+      "order": 3,
+      "estimatedTime": 20
+    },
+    {
+      "id": "nouns-articles",
+      "levelId": "beginner",
+      "title": "İsimler ve Tanımlıklar (Nouns & Articles)",
+      "description": "Tekil/çoğul isimler, 'a, an, the' kullanımı.",
+      "order": 4,
+      "estimatedTime": 15
+    },
+    {
+      "id": "basic-adjectives-adverbs",
+      "levelId": "beginner",
+      "title": "Temel Sıfatlar ve Zarflar (Basic Adjectives & Adverbs)",
+      "description": "Nesneleri ve eylemleri tanımlama.",
+      "order": 5,
+      "estimatedTime": 15
+    },
+    {
+      "id": "possessive-adjectives-pronouns",
+      "levelId": "beginner",
+      "title": "İyelik Sıfatları ve Zamirleri (Possessive Adjectives & Pronouns)",
+      "description": "Sahiplik belirtme.",
+      "order": 6,
+      "estimatedTime": 15
+    },
+    {
+      "id": "prepositions-of-place-time",
+      "levelId": "beginner",
+      "title": "Yer ve Zaman Edatları (Prepositions of Place & Time)",
+      "description": "Konum ve zaman belirtme.",
+      "order": 7,
+      "estimatedTime": 20
+    },
+    {
+      "id": "there-is-are",
+      "levelId": "beginner",
+      "title": "There Is / There Are (Var Olmak)",
+      "description": "Bir şeylerin varlığını belirtme.",
+      "order": 8,
+      "estimatedTime": 10
+    },
+    {
+      "id": "simple-past",
+      "levelId": "intermediate",
+      "title": "Simple Past Tense (Geçmiş Zaman)",
+      "description": "Geçmişte tamamlanmış eylemlerden bahsetme.",
+      "order": 9,
+      "estimatedTime": 25
+    },
+    {
+      "id": "past-continuous",
+      "levelId": "intermediate",
+      "title": "Past Continuous Tense (Sürekli Geçmiş Zaman)",
+      "description": "Geçmişte belirli bir zamanda devam eden eylemlerden bahsetme.",
+      "order": 10,
+      "estimatedTime": 20
+    },
+    {
+      "id": "present-perfect",
+      "levelId": "intermediate",
+      "title": "Present Perfect Tense (Yakın Geçmiş Zaman)",
+      "description": "Geçmişte başlayıp şimdiki zamanla bağlantısı olan eylemler.",
+      "order": 11,
+      "estimatedTime": 30
+    },
+    {
+      "id": "comparatives-superlatives",
+      "levelId": "intermediate",
+      "title": "Karşılaştırmalı ve En Üstünlük Sıfatları (Comparatives & Superlatives)",
+      "description": "Nesneleri veya kişileri karşılaştırma ve en üstün olanı belirtme.",
+      "order": 12,
+      "estimatedTime": 20
+    },
+    {
+      "id": "modals-permission-ability",
+      "levelId": "intermediate",
+      "title": "Kip Fiilleri: İzin ve Yetenek (Modals: Permission & Ability)",
+      "description": "'Can', 'could', 'may', 'might' gibi kip fiillerinin kullanımı.",
+      "order": 13,
+      "estimatedTime": 20
+    },
+    {
+      "id": "first-conditional",
+      "levelId": "intermediate",
+      "title": "First Conditional (Tip 1 Koşul Cümleleri)",
+      "description": "Gerçekleşme olasılığı yüksek olan gelecek durumlar ve sonuçları.",
+      "order": 14,
+      "estimatedTime": 25
+    },
+    {
+      "id": "passive-voice-beginner",
+      "levelId": "intermediate",
+      "title": "Edilgen Çatı (Passive Voice) - Başlangıç",
+      "description": "Eylemi yapanın değil, etkilenenin vurgulandığı cümleler.",
+      "order": 15,
+      "estimatedTime": 25
+    },
+    {
+      "id": "quantifiers",
+      "levelId": "intermediate",
+      "title": "Miktar Belirteçleri (Quantifiers)",
+      "description": "'Much', 'many', 'a lot of', 'some', 'any' gibi miktar belirten ifadeler.",
+      "order": 16,
+      "estimatedTime": 20
+    },
+    {
+      "id": "used-to",
+      "levelId": "intermediate",
+      "title": "Used To (Geçmiş Alışkanlıklar)",
+      "description": "Geçmişte düzenli olarak yapılan ama şimdi yapılmayan eylemler.",
+      "order": 17,
+      "estimatedTime": 15
+    },
+    {
+      "id": "present-perfect-continuous",
+      "levelId": "advanced",
+      "title": "Present Perfect Continuous Tense",
+      "description": "Geçmişte başlayıp hala devam eden veya yakın zamanda bitmiş ve etkisi devam eden eylemler.",
+      "order": 18,
+      "estimatedTime": 30
+    },
+    {
+      "id": "past-perfect",
+      "levelId": "advanced",
+      "title": "Past Perfect Tense",
+      "description": "Geçmişte belirli bir zamandan önce tamamlanmış eylemler.",
+      "order": 19,
+      "estimatedTime": 25
+    },
+    {
+      "id": "future-tenses",
+      "levelId": "advanced",
+      "title": "Gelecek Zamanlar (Future Tenses)",
+      "description": "'Will', 'be going to', 'Present Continuous' ve 'Simple Present' ile gelecek zaman ifade etme.",
+      "order": 20,
+      "estimatedTime": 35
+    },
+    {
+      "id": "reported-speech",
+      "levelId": "advanced",
+      "title": "Aktarılan Konuşma (Reported Speech)",
+      "description": "Başkalarının söylediklerini veya sorularını aktarma.",
+      "order": 21,
+      "estimatedTime": 40
+    },
+    {
+      "id": "passive-voice-advanced",
+      "levelId": "advanced",
+      "title": "Edilgen Çatı (Passive Voice) - İleri Seviye",
+      "description": "Farklı zamanlar ve modal fiillerle edilgen çatı kullanımı.",
+      "order": 22,
+      "estimatedTime": 30
+    },
+    {
+      "id": "relative-clauses",
+      "levelId": "advanced",
+      "title": "İlgi Zamirleri (Relative Clauses)",
+      "description": "İsimleri tanımlayan ve ek bilgi veren yan cümleler.",
+      "order": 23,
+      "estimatedTime": 30
+    },
+    {
+      "id": "conditional-types-2-3",
+      "levelId": "advanced",
+      "title": "Koşul Cümleleri (Conditional Types 2 & 3)",
+      "description": "Gerçek dışı veya geçmişteki varsayımsal durumlar ve sonuçları.",
+      "order": 24,
+      "estimatedTime": 45
+    },
+    {
+      "id": "gerunds-infinitives",
+      "levelId": "advanced",
+      "title": "Gerund ve Infinitive Kullanımı",
+      "description": "Fiillerden sonra gelen fiilimsilerin doğru formları.",
+      "order": 25,
+      "estimatedTime": 30
+    },
+    {
+      "id": "modal-perfects",
+      "levelId": "advanced",
+      "title": "Kip Fiillerinin Mükemmel Halleri (Modal Perfects)",
+      "description": "Geçmişteki olasılıklar, çıkarımlar ve pişmanlıkları ifade etme.",
+      "order": 26,
+      "estimatedTime": 35
+    }
+  ],
+  "details": [
+    {
+      "id": "simple-present-detail",
+      "topicId": "simple-present",
+      "title": "Simple Present Tense (Geniş Zaman)",
+      "explanation": "Simple Present Tense, düzenli olarak yaptığımız eylemleri, alışkanlıkları, genel gerçekleri ve sabit durumları ifade etmek için kullanılır. Genellikle 'every day', 'always', 'often', 'sometimes', 'never' gibi zaman zarflarıyla birlikte kullanılır.",
+      "rules": [
+        "Olumlu cümlelerde özneden sonra fiilin yalın hali kullanılır. (I/You/We/They + Verb)",
+        "He/She/It özneleriyle fiile '-s' veya '-es' takısı gelir. (He/She/It + Verb-s/es)",
+        "Olumsuz cümlelerde 'don't' (do not) veya 'doesn't' (does not) kullanılır. (I/You/We/They + don't + Verb; He/She/It + doesn't + Verb)",
+        "Soru cümlelerinde 'Do' veya 'Does' başa gelir. (Do/Does + Özne + Verb?)",
+        "Fiil '-s, -sh, -ch, -x, -z, -o' ile bitiyorsa '-es' alır (e.g., go -> goes, wash -> washes).",
+        "Fiil sessiz harf + 'y' ile bitiyorsa 'y' düşer ve '-ies' alır (e.g., study -> studies)."
+      ],
+      "examples": [
+        {
+          "english": "I <strong>read</strong> books every evening.",
+          "turkish": "Her akşam kitap okurum.",
+          "highlight": "read"
+        },
+        {
+          "english": "She <strong>works</strong> in a hospital.",
+          "turkish": "O bir hastanede çalışır.",
+          "highlight": "works"
+        },
+        {
+          "english": "We <strong>don't play</strong> football on Sundays.",
+          "turkish": "Pazar günleri futbol oynamayız.",
+          "highlight": "don't play"
+        },
+        {
+          "english": "He <strong>doesn't like</strong> coffee.",
+          "turkish": "O kahve sevmez.",
+          "highlight": "doesn't like"
+        },
+        {
+          "english": "<strong>Do</strong> you <strong>speak</strong> English?",
+          "turkish": "İngilizce konuşur musun?",
+          "highlight": "Do speak"
+        },
+        {
+          "english": "<strong>Does</strong> she <strong>live</strong> in İzmir?",
+          "turkish": "O İzmir'de mi yaşıyor?",
+          "highlight": "Does live"
+        }
+      ],
+      "tips": [
+        "Zaman zarflarına dikkat edin (always, often, usually, sometimes, rarely, never, every day/week/month/year).",
+        "He/She/It özneleriyle fiile '-s' veya '-es' takısı eklemeyi unutmayın. Bu, başlangıç seviyesinde en sık yapılan hatalardan biridir."
+      ],
+      "quizzes": [
+        {
+          "question": "Choose the correct form of the verb: He (live) in a big city.",
+          "options": ["live", "lives", "living", "lived"],
+          "answer": "lives",
+          "explanation": "He/She/It özneleriyle Simple Present Tense'de fiile '-s' takısı gelir."
+        },
+        {
+          "question": "Complete the sentence: They ___ (not/go) to the cinema often.",
+          "options": ["doesn't go", "don't go", "not go", "aren't go"],
+          "answer": "don't go",
+          "explanation": "I/You/We/They özneleriyle olumsuz cümlelerde 'don't' kullanılır."
+        }
+      ]
+    },
+    {
+      "id": "to-be-verb-detail",
+      "topicId": "to-be-verb",
+      "title": "To Be Fiili (Olmak Fiili)",
+      "explanation": "'To Be' fiili (am, is, are), İngilizcede en temel ve en çok kullanılan fiillerden biridir. Bir kişinin veya şeyin durumunu, kimliğini veya konumunu belirtmek için kullanılır.",
+      "rules": [
+        "I + am",
+        "You/We/They + are",
+        "He/She/It + is",
+        "Olumsuz cümlelerde 'not' kelimesi 'am, is, are' fiillerinden sonra gelir. (e.g., I am not, He is not, They are not)",
+        "Soru cümlelerinde 'Am, Is, Are' fiilleri cümlenin başına gelir. (e.g., Am I?, Is he?, Are you?)"
+      ],
+      "examples": [
+        {
+          "english": "I <strong>am</strong> a student.",
+          "turkish": "Ben bir öğrenciyim.",
+          "highlight": "am"
+        },
+        {
+          "english": "You <strong>are</strong> happy.",
+          "turkish": "Sen mutlusun.",
+          "highlight": "are"
+        },
+        {
+          "english": "He <strong>is</strong> from Canada.",
+          "turkish": "O Kanadalı.",
+          "highlight": "is"
+        },
+        {
+          "english": "She <strong>is not</strong> at home.",
+          "turkish": "O evde değil.",
+          "highlight": "is not"
+        },
+        {
+          "english": "We <strong>are</strong> good friends.",
+          "turkish": "Biz iyi arkadaşız.",
+          "highlight": "are"
+        },
+        {
+          "english": "<strong>Is</strong> it cold today?",
+          "turkish": "Bugün hava soğuk mu?",
+          "highlight": "Is"
+        }
+      ],
+      "tips": [
+        "Kısa formları (I'm, You're, He's, She's, It's, We're, They're) ve olumsuz kısa formları (isn't, aren't) öğrenin. 'Am not' için kısa form yoktur, sadece 'I'm not' kullanılır.",
+        "'To Be' fiili sadece şimdiki zamanı değil, aynı zamanda yaş, milliyet, meslek gibi kalıcı durumları da ifade eder."
+      ],
+      "quizzes": [
+        {
+          "question": "Fill in the blank: My sister ___ a doctor.",
+          "options": ["am", "is", "are", "be"],
+          "answer": "is",
+          "explanation": "'My sister' tekil ve 'she' zamirine karşılık geldiği için 'is' kullanılır."
+        },
+        {
+          "question": "Choose the correct negative form: They (be) not ready.",
+          "options": ["is not", "am not", "are not", "be not"],
+          "answer": "are not",
+          "explanation": "'They' çoğul olduğu için 'are not' kullanılır."
+        }
+      ]
+    },
+    {
+      "id": "present-continuous-detail",
+      "topicId": "present-continuous",
+      "title": "Present Continuous Tense (Şimdiki Zaman)",
+      "explanation": "Present Continuous Tense, konuşma anında devam eden eylemleri, geçici durumları veya yakın gelecekteki planları ifade etmek için kullanılır. Genellikle 'now', 'right now', 'at the moment' gibi zaman zarflarıyla kullanılır.",
+      "rules": [
+        "Özne + am/is/are + fiil + -ing",
+        "Olumsuz cümlelerde 'not' kelimesi 'am/is/are' fiillerinden sonra gelir. (e.g., I am not watching, He is not sleeping)",
+        "Soru cümlelerinde 'Am/Is/Are' fiilleri cümlenin başına gelir. (e.g., Am I reading?, Is he working?, Are you listening?)"
+      ],
+      "examples": [
+        {
+          "english": "I <strong>am studying</strong> English now.",
+          "turkish": "Şu an İngilizce çalışıyorum.",
+          "highlight": "am studying"
+        },
+        {
+          "english": "She <strong>is watching</strong> TV at the moment.",
+          "turkish": "O şu an televizyon izliyor.",
+          "highlight": "is watching"
+        },
+        {
+          "english": "They <strong>are not playing</strong> outside.",
+          "turkish": "Onlar dışarıda oynamıyorlar.",
+          "highlight": "are not playing"
+        },
+        {
+          "english": "He <strong>isn't listening</strong> to me.",
+          "turkish": "O beni dinlemiyor.",
+          "highlight": "isn't listening"
+        },
+        {
+          "english": "<strong>Are</strong> you <strong>coming</strong> to the party tonight?",
+          "turkish": "Bu akşam partiye geliyor musun?",
+          "highlight": "Are coming"
+        },
+        {
+          "english": "What <strong>are</strong> you <strong>doing</strong>?",
+          "turkish": "Ne yapıyorsun?",
+          "highlight": "are doing"
+        }
+      ],
+      "tips": [
+        "Hareketli fiillerle (walk, run, eat, sleep vb.) kullanımı yaygındır.",
+        "Duygu veya düşünce bildiren fiillerle (know, love, believe vb.) genellikle kullanılmaz. Bu fiillere 'stative verbs' denir.",
+        "'-ing' takısı eklerken bazı fiillerde harf düşmesi (come -> coming) veya son harfin tekrarı (run -> running) gibi kurallara dikkat edin."
+      ],
+      "quizzes": [
+        {
+          "question": "Choose the correct form: We (have) dinner right now.",
+          "options": ["have", "are having", "has", "is having"],
+          "answer": "are having",
+          "explanation": "Şu an devam eden bir eylem olduğu için Present Continuous Tense kullanılır."
+        },
+        {
+          "question": "Fill in the blank: He ___ (not/sleep) at the moment.",
+          "options": ["doesn't sleep", "isn't sleeping", "aren't sleeping", "not sleep"],
+          "answer": "isn't sleeping",
+          "explanation": "'He' öznesi ile 'is not' ve fiile '-ing' takısı gelir."
+        }
+      ]
+    },
+    {
+      "id": "nouns-articles-detail",
+      "topicId": "nouns-articles",
+      "title": "İsimler ve Tanımlıklar (Nouns & Articles)",
+      "explanation": "İsimler (nouns), insanları, yerleri, şeyleri veya fikirleri adlandıran kelimelerdir. Tanımlıklar (articles) ise bir ismin belirli mi yoksa belirsiz mi olduğunu gösterir.",
+      "rules": [
+        "<strong>Tekil ve Çoğul İsimler:</strong> Çoğu isme '-s' eklenerek çoğul yapılır (e.g., cat -> cats). Bazı isimler düzensizdir (e.g., man -> men, child -> children).",
+        "<strong>'A' ve 'An':</strong> Sayılabilen tekil isimlerin önüne gelir. Sesli harfle başlayan kelimelerin önüne 'an' (an apple, an hour), sessiz harfle başlayan kelimelerin önüne 'a' (a book, a university) gelir.",
+        "<strong>'The':</strong> Belirli bir şeyden, kişiden veya daha önce bahsedilen bir şeyden bahsederken kullanılır. Hem tekil hem de çoğul isimlerle kullanılabilir.",
+        "Sayılmayan isimler (uncountable nouns - e.g., water, information, advice) genellikle tekil kabul edilir ve 'a/an' almazlar. 'The' alabilirler."
+      ],
+      "examples": [
+        {
+          "english": "I have <strong>a</strong> dog.",
+          "turkish": "Bir köpeğim var.",
+          "highlight": "a"
+        },
+        {
+          "english": "She ate <strong>an</strong> orange.",
+          "turkish": "Bir portakal yedi.",
+          "highlight": "an"
+        },
+        {
+          "english": "<strong>The</strong> sun is shining.",
+          "turkish": "Güneş parlıyor.",
+          "highlight": "The"
+        },
+        {
+          "english": "There are many <strong>trees</strong> in the park.",
+          "turkish": "Parkta çok ağaç var.",
+          "highlight": "trees"
+        },
+        {
+          "english": "He needs some <strong>information</strong>.",
+          "turkish": "Ona biraz bilgi lazım.",
+          "highlight": "information"
+        }
+      ],
+      "tips": [
+        "İsimlerin sayılabilir (countable) veya sayılamaz (uncountable) olup olmadığını öğrenmek önemlidir, çünkü bu 'a/an/the' ve miktar belirteçlerinin (some, many, much) kullanımını etkiler.",
+        "Düzensiz çoğul isimleri (irregular plurals) ezberlemeye çalışın."
+      ],
+      "quizzes": [
+        {
+          "question": "Choose the correct article: She is ___ excellent student.",
+          "options": ["a", "an", "the", "no article"],
+          "answer": "an",
+          "explanation": "'Excellent' kelimesi sesli harf ile başladığı için 'an' kullanılır."
+        },
+        {
+          "question": "Make it plural: This is a beautiful (child).",
+          "options": ["childs", "children", "childen", "child's"],
+          "answer": "children",
+          "explanation": "'Child' düzensiz bir isimdir, çoğulu 'children'dır."
+        }
+      ]
+    },
+    {
+      "id": "basic-adjectives-adverbs-detail",
+      "topicId": "basic-adjectives-adverbs",
+      "title": "Temel Sıfatlar ve Zarflar (Basic Adjectives & Adverbs)",
+      "explanation": "<strong>Sıfatlar (Adjectives)</strong>, isimleri veya zamirleri tanımlar, onlar hakkında bilgi verir. <strong>Zarflar (Adverbs)</strong> ise fiilleri, sıfatları veya başka zarfları tanımlar, bir eylemin nasıl, ne zaman, nerede veya ne sıklıkla yapıldığını gösterir.",
+      "rules": [
+        "<strong>Sıfatlar:</strong> Genellikle tanımladıkları isimden önce gelirler (e.g., a <strong>red</strong> car) veya 'to be' fiilinden sonra gelirler (e.g., The car <strong>is red</strong>).",
+        "<strong>Zarflar:</strong> Genellikle '-ly' eki alırlar (e.g., quick -> quickly, careful -> carefully). Ancak bazı zarflar düzensizdir (e.g., good -> well, fast -> fast, hard -> hard). Fiilden sonra veya cümle sonunda yer alabilirler."
+      ],
+      "examples": [
+        {
+          "english": "She is a <strong>kind</strong> person.",
+          "turkish": "O nazik bir insan.",
+          "highlight": "kind"
+        },
+        {
+          "english": "He drives <strong>slowly</strong>.",
+          "turkish": "O yavaşça araba sürer.",
+          "highlight": "slowly"
+        },
+        {
+          "english": "The food tastes <strong>delicious</strong>.",
+          "turkish": "Yemek lezzetli.",
+          "highlight": "delicious"
+        },
+        {
+          "english": "They learn English <strong>quickly</strong>.",
+          "turkish": "Onlar İngilizce'yi hızlıca öğrenirler.",
+          "highlight": "quickly"
+        },
+        {
+          "english": "I feel <strong>good</strong> today.",
+          "turkish": "Bugün iyi hissediyorum.",
+          "highlight": "good"
+        },
+        {
+          "english": "He sings <strong>well</strong>.",
+          "turkish": "O iyi şarkı söyler.",
+          "highlight": "well"
+        }
+      ],
+      "tips": [
+        "Sıfatlar 'ne tür?', 'kaç tane?' gibi sorulara cevap verirken, zarflar 'nasıl?', 'ne zaman?', 'nerede?' gibi sorulara cevap verir.",
+        "Bir kelimenin sıfat mı zarf mı olduğunu anlamak, cümledeki işlevine bağlıdır."
+      ],
+      "quizzes": [
+        {
+          "question": "Is 'beautiful' an adjective or an adverb? The <strong>beautiful</strong> girl sang.",
+          "options": ["Adjective", "Adverb"],
+          "answer": "Adjective",
+          "explanation": "'Beautiful' kelimesi 'girl' ismini tanımladığı için sıfattır."
+        },
+        {
+          "question": "Choose the correct form: She speaks English (fluent/fluently).",
+          "options": ["fluent", "fluently"],
+          "answer": "fluently",
+          "explanation": "'Speaks' fiilini tanımladığı için zarf formu olan 'fluently' kullanılır."
+        }
+      ]
+    },
+    {
+      "id": "possessive-adjectives-pronouns-detail",
+      "topicId": "possessive-adjectives-pronouns",
+      "title": "İyelik Sıfatları ve Zamirleri (Possessive Adjectives & Pronouns)",
+      "explanation": "İyelik sıfatları ve zamirleri bir şeye kimin sahip olduğunu belirtmek için kullanılır. <strong>İyelik sıfatları</strong> bir isimden önce gelirken, <strong>iyelik zamirleri</strong> ismin yerine geçer.",
+      "rules": [
+        "<strong>İyelik Sıfatları:</strong> my, your, his, her, its, our, their. Her zaman bir isimden önce gelirler. (e.g., <strong>My</strong> car, <strong>Her</strong> book)",
+        "<strong>İyelik Zamirleri:</strong> mine, yours, his, hers, its, ours, theirs. Cümlede tek başına kullanılırlar ve ismin tekrarını önlerler. (e.g., This car is <strong>mine</strong>. That book is <strong>hers</strong>.)"
+      ],
+      "examples": [
+        {
+          "english": "This is <strong>my</strong> phone.",
+          "turkish": "Bu benim telefonum.",
+          "highlight": "my"
+        },
+        {
+          "english": "The phone is <strong>mine</strong>.",
+          "turkish": "Telefon benim.",
+          "highlight": "mine"
+        },
+        {
+          "english": "Is this <strong>your</strong> pen?",
+          "turkish": "Bu senin kalemin mi?",
+          "highlight": "your"
+        },
+        {
+          "english": "No, it's not <strong>yours</strong>.",
+          "turkish": "Hayır, o senin değil.",
+          "highlight": "yours"
+        },
+        {
+          "english": "This is <strong>his</strong> house.",
+          "turkish": "Bu onun evi.",
+          "highlight": "his"
+        },
+        {
+          "english": "The house is <strong>his</strong>.",
+          "turkish": "Ev onun.",
+          "highlight": "his"
+        },
+        {
+          "english": "<strong>Our</strong> dog is big.",
+          "turkish": "Bizim köpeğimiz büyük.",
+          "highlight": "Our"
+        },
+        {
+          "english": "The big dog is <strong>ours</strong>.",
+          "turkish": "Büyük köpek bizim.",
+          "highlight": "ours"
+        }
+      ],
+      "tips": [
+        "İyelik sıfatları ve zamirleri arasındaki farkı karıştırmayın. İyelik sıfatları isimle birlikte kullanılırken, iyelik zamirleri isim olmadan kendi başlarına dururlar.",
+        "'Its' (iyelik sıfatı) ve 'it's' (it is veya it has kısaltması) arasındaki farka dikkat edin."
+      ],
+      "quizzes": [
+        {
+          "question": "Choose the correct word: This is (my/mine) book.",
+          "options": ["my", "mine"],
+          "answer": "my",
+          "explanation": "'Book' kelimesinden önce geldiği için iyelik sıfatı olan 'my' kullanılır."
+        },
+        {
+          "question": "Fill in the blank: The red car is (her/hers).",
+          "options": ["her", "hers"],
+          "answer": "hers",
+          "explanation": "Cümlede tek başına kullanıldığı ve bir ismin yerine geçtiği için iyelik zamiri olan 'hers' kullanılır."
+        }
+      ]
+    },
+    {
+      "id": "prepositions-of-place-time-detail",
+      "topicId": "prepositions-of-place-time",
+      "title": "Yer ve Zaman Edatları (Prepositions of Place & Time)",
+      "explanation": "Edatlar, bir isim veya zamirin cümledeki başka bir kelimeyle ilişkisini gösterir. Yer ve zaman edatları, bir şeyin nerede olduğunu veya bir olayın ne zaman gerçekleştiğini belirtmek için kullanılır.",
+      "rules": [
+        "<strong>Yer Edatları (Prepositions of Place):</strong>",
+        "<strong>in:</strong> içinde (in the room, in London)",
+        "<strong>on:</strong> üzerinde, üstünde (on the table, on the wall)",
+        "<strong>at:</strong> belirli bir nokta veya yer (at the bus stop, at home)",
+        "<strong>under:</strong> altında (under the chair)",
+        "<strong>behind:</strong> arkasında (behind the tree)",
+        "<strong>in front of:</strong> önünde (in front of the building)",
+        "<strong>next to / beside:</strong> yanında (next to the school)",
+        "<strong>between:</strong> arasında (between two houses)",
+        "<strong>Zaman Edatları (Prepositions of Time):</strong>",
+        "<strong>in:</strong> aylar, yıllar, mevsimler, günün bölümleri (in August, in 2024, in summer, in the morning)",
+        "<strong>on:</strong> günler, belirli tarihler (on Monday, on May 5th)",
+        "<strong>at:</strong> belirli saatler, kısa zaman dilimleri (at 7 o'clock, at night, at noon)"
+      ],
+      "examples": [
+        {
+          "english": "The cat is <strong>on</strong> the roof.",
+          "turkish": "Kedi çatının üzerinde.",
+          "highlight": "on"
+        },
+        {
+          "english": "I live <strong>in</strong> Istanbul.",
+          "turkish": "İstanbul'da yaşıyorum.",
+          "highlight": "in"
+        },
+        {
+          "english": "Let's meet <strong>at</strong> 3 PM.",
+          "turkish": "Saat 3'te buluşalım.",
+          "highlight": "at"
+        },
+        {
+          "english": "My birthday is <strong>in</strong> December.",
+          "turkish": "Doğum günüm Aralık'ta.",
+          "highlight": "in"
+        },
+        {
+          "english": "She works <strong>at</strong> the hospital.",
+          "turkish": "O hastanede çalışıyor.",
+          "highlight": "at"
+        },
+        {
+          "english": "We have a meeting <strong>on</strong> Tuesday.",
+          "turkish": "Salı günü bir toplantımız var.",
+          "highlight": "on"
+        }
+      ],
+      "tips": [
+        "Edatlar bazen yanıltıcı olabilir. En yaygın kullanımlarını örneklerle birlikte ezberlemeye çalışın.",
+        "Türkçeden birebir çeviri yapmaktan kaçının; İngilizcedeki edat kullanımları farklılık gösterebilir."
+      ],
+      "quizzes": [
+        {
+          "question": "Fill in the blank with the correct preposition: The book is ___ the shelf.",
+          "options": ["in", "on", "at", "under"],
+          "answer": "on",
+          "explanation": "Kitap rafın üzerinde olduğu için 'on' kullanılır."
+        },
+        {
+          "question": "Choose the correct preposition: I wake up ___ 7 o'clock.",
+          "options": ["in", "on", "at", "by"],
+          "answer": "at",
+          "explanation": "Belirli saatler için 'at' kullanılır."
+        }
+      ]
+    },
+    {
+      "id": "there-is-are-detail",
+      "topicId": "there-is-are",
+      "title": "There Is / There Are (Var Olmak)",
+      "explanation": "'There is' ve 'There are' yapıları, bir yer veya durumda bir şeyin varlığını belirtmek için kullanılır. 'There is' tekil isimlerle, 'There are' ise çoğul isimlerle kullanılır.",
+      "rules": [
+        "<strong>There is + Tekil İsim / Sayılamayan İsim</strong> (e.g., There is a cat. There is some water.)",
+        "<strong>There are + Çoğul İsim</strong> (e.g., There are two cats. There are many books.)",
+        "Olumsuz cümlelerde 'not' kelimesi 'is' veya 'are' fiillerinden sonra gelir. (e.g., There isn't, There aren't)",
+        "Soru cümlelerinde 'Is' veya 'Are' cümlenin başına gelir. (e.g., Is there a cat?, Are there any books?)"
+      ],
+      "examples": [
+        {
+          "english": "<strong>There is</strong> a park near my house.",
+          "turkish": "Evimin yakınında bir park var.",
+          "highlight": "There is"
+        },
+        {
+          "english": "<strong>There are</strong> three books on the table.",
+          "turkish": "Masanın üzerinde üç kitap var.",
+          "highlight": "There are"
+        },
+        {
+          "english": "<strong>There isn't</strong> any milk in the fridge.",
+          "turkish": "Buzdolabında hiç süt yok.",
+          "highlight": "There isn't"
+        },
+        {
+          "english": "<strong>Are there</strong> any students in the classroom?",
+          "turkish": "Sınıfta hiç öğrenci var mı?",
+          "highlight": "Are there"
+        }
+      ],
+      "tips": [
+        "Türkçedeki 'var' kelimesinin doğrudan çevirisi gibi düşünebilirsiniz. Ancak İngilizcede 'there is/are' yapısı kullanılır.",
+        "Sayılamayan isimlerle her zaman 'there is' kullanıldığını unutmayın (e.g., There is a lot of traffic)."
+      ],
+      "quizzes": [
+        {
+          "question": "Choose the correct form: ___ a cat on the roof.",
+          "options": ["There are", "There is", "Is there", "Are there"],
+          "answer": "There is",
+          "explanation": "'A cat' tekil olduğu için 'There is' kullanılır."
+        },
+        {
+          "question": "Fill in the blank: ___ five chairs in the room.",
+          "options": ["There is", "There are", "Is there", "Are there"],
+          "answer": "There are",
+          "explanation": "'Five chairs' çoğul olduğu için 'There are' kullanılır."
+        }
+      ]
+    },
+    {
+      "id": "simple-past-detail",
+      "topicId": "simple-past",
+      "title": "Simple Past Tense (Geçmiş Zaman)",
+      "explanation": "Simple Past Tense, geçmişte başlayıp bitmiş, tamamlanmış eylemleri veya durumları ifade etmek için kullanılır. Belirli bir zaman diliminde gerçekleşen olayları anlatırken tercih edilir.",
+      "rules": [
+        "Düzenli fiiller için fiilin sonuna '-ed' eklenir. (e.g., walk -> walked, play -> played)",
+        "Düzensiz fiillerin ikinci halleri kullanılır ve ezberlenmesi gerekir. (e.g., go -> went, eat -> ate, see -> saw)",
+        "Olumsuz cümlelerde 'did not' (didn't) ve fiilin yalın hali kullanılır. (Özne + didn't + Verb (yalın hali))",
+        "Soru cümlelerinde 'Did' cümlenin başına gelir ve fiilin yalın hali kullanılır. (Did + Özne + Verb (yalın hali)?)"
+      ],
+      "examples": [
+        {
+          "english": "I <strong>visited</strong> my grandparents last weekend.",
+          "turkish": "Geçen hafta sonu büyükannemi ve büyükbabamı ziyaret ettim.",
+          "highlight": "visited"
+        },
+        {
+          "english": "She <strong>went</strong> to Paris in 2023.",
+          "turkish": "O 2023'te Paris'e gitti.",
+          "highlight": "went"
+        },
+        {
+          "english": "They <strong>didn't finish</strong> their homework.",
+          "turkish": "Onlar ödevlerini bitirmediler.",
+          "highlight": "didn't finish"
+        },
+        {
+          "english": "<strong>Did</strong> you <strong>see</strong> the movie?",
+          "turkish": "Filmi gördün mü?",
+          "highlight": "Did see"
+        }
+      ],
+      "tips": [
+        "Düzenli fiillere '-ed' eklerken bazı yazım kurallarına dikkat edin (e.g., stop -> stopped, study -> studied).",
+        "Düzensiz fiillerin listesini ezberlemek, bu tense'i doğru kullanmanın anahtarıdır.",
+        "'Yesterday', 'last week/month/year', 'ago', 'in 2020' gibi zaman zarfları sıklıkla kullanılır."
+      ],
+      "quizzes": [
+        {
+          "question": "Choose the correct past form: We (eat) pizza yesterday.",
+          "options": ["eat", "ate", "eaten", "eating"],
+          "answer": "ate",
+          "explanation": "'Eat' fiilinin Simple Past hali 'ate'tir."
+        },
+        {
+          "question": "Complete the sentence: He ___ (not/come) to the party.",
+          "options": ["doesn't come", "didn't came", "didn't come", "not came"],
+          "answer": "didn't come",
+          "explanation": "Olumsuz Simple Past cümlelerde 'didn't' ve fiilin yalın hali kullanılır."
+        }
+      ]
+    },
+    {
+      "id": "past-continuous-detail",
+      "topicId": "past-continuous",
+      "title": "Past Continuous Tense (Sürekli Geçmiş Zaman)",
+      "explanation": "Past Continuous Tense, geçmişte belirli bir zamanda devam eden bir eylemi veya geçmişte aynı anda gerçekleşen iki eylemi ifade etmek için kullanılır. Genellikle 'while' ve 'when' bağlaçlarıyla birlikte görülür.",
+      "rules": [
+        "Özne + was/were + fiil + -ing",
+        "I/He/She/It özneleriyle 'was', You/We/They özneleriyle 'were' kullanılır.",
+        "Olumsuz cümlelerde 'not' kelimesi 'was/were' fiillerinden sonra gelir. (e.g., I wasn't sleeping, They weren't listening)",
+        "Soru cümlelerinde 'Was/Were' cümlenin başına gelir. (e.g., Was he reading?, Were you studying?)"
+      ],
+      "examples": [
+        {
+          "english": "I <strong>was reading</strong> a book when she called.",
+          "turkish": "O aradığında ben kitap okuyordum.",
+          "highlight": "was reading"
+        },
+        {
+          "english": "They <strong>were watching</strong> TV all evening.",
+          "turkish": "Onlar bütün akşam televizyon izliyorlardı.",
+          "highlight": "were watching"
+        },
+        {
+          "english": "While she <strong>was cooking</strong>, he <strong>was cleaning</strong> the house.",
+          "turkish": "O yemek yaparken, o evi temizliyordu.",
+          "highlight": "was cooking, was cleaning"
+        },
+        {
+          "english": "We <strong>weren't working</strong> at 10 AM yesterday.",
+          "turkish": "Dün sabah 10'da çalışmıyorduk.",
+          "highlight": "weren't working"
+        }
+      ],
+      "tips": [
+        "'When' (iken) ve 'while' (sırasında) gibi bağlaçların kullanımına dikkat edin. 'When' genellikle Simple Past ile, 'while' ise Past Continuous ile kullanılır.",
+        "Geçmişte kesintiye uğrayan bir eylemi anlatırken de kullanılabilir: 'I was sleeping when the phone rang.'"
+      ],
+      "quizzes": [
+        {
+          "question": "Choose the correct form: She ___ (study) when I arrived.",
+          "options": ["was studying", "studied", "is studying", "studies"],
+          "answer": "was studying",
+          "explanation": "Geçmişte devam eden bir eylem olduğu için Past Continuous Tense kullanılır."
+        },
+        {
+          "question": "Complete the sentence: They ___ (not/listen) to the teacher.",
+          "options": ["weren't listened", "wasn't listening", "aren't listening", "weren't listening"],
+          "answer": "weren't listening",
+          "explanation": "'They' çoğul olduğu için 'weren't' ve fiilin '-ing' hali kullanılır."
+        }
+      ]
+    },
+    {
+      "id": "present-perfect-detail",
+      "topicId": "present-perfect",
+      "title": "Present Perfect Tense (Yakın Geçmiş Zaman)",
+      "explanation": "Present Perfect Tense, geçmişte başlayıp şimdiki zamanla bir bağlantısı olan eylemleri veya deneyimleri ifade etmek için kullanılır. Eylemin ne zaman gerçekleştiği önemli değildir, önemli olan eylemin sonucunun veya deneyiminin şu anki etkisidir.",
+      "rules": [
+        "Özne + have/has + fiilin üçüncü hali (Past Participle)",
+        "I/You/We/They özneleriyle 'have', He/She/It özneleriyle 'has' kullanılır.",
+        "Olumsuz cümlelerde 'not' kelimesi 'have/has' fiillerinden sonra gelir. (e.g., I haven't seen, He hasn't finished)",
+        "Soru cümlelerinde 'Have/Has' cümlenin başına gelir. (e.g., Have you ever been?, Has she eaten?)"
+      ],
+      "examples": [
+        {
+          "english": "I <strong>have lived</strong> in this city for five years.",
+          "turkish": "Bu şehirde beş yıldır yaşıyorum.",
+          "highlight": "have lived"
+        },
+        {
+          "english": "She <strong>has never seen</strong> a real elephant.",
+          "turkish": "O hiç gerçek fil görmedi.",
+          "highlight": "has never seen"
+        },
+        {
+          "english": "We <strong>haven't finished</strong> our project yet.",
+          "turkish": "Projemizi henüz bitirmedik.",
+          "highlight": "haven't finished"
+        },
+        {
+          "english": "<strong>Have</strong> you <strong>eaten</strong> breakfast?",
+          "turkish": "Kahvaltı yaptın mı?",
+          "highlight": "Have eaten"
+        }
+      ],
+      "tips": [
+        "'For' (süredir) ve 'since' (den beri) edatları sıklıkla kullanılır.",
+        "'Ever' (hiç), 'never' (asla), 'just' (az önce), 'already' (zaten), 'yet' (henüz) gibi zaman zarfları bu tense ile yaygındır.",
+        "Fiillerin üçüncü hallerini (Past Participle) ezberlemek kritik öneme sahiptir."
+      ],
+      "quizzes": [
+        {
+          "question": "Choose the correct form: They ___ (not/visit) that museum yet.",
+          "options": ["haven't visited", "didn't visit", "hasn't visited", "weren't visiting"],
+          "answer": "haven't visited",
+          "explanation": "'Yet' zaman zarfı ve 'They' öznesi ile Present Perfect Tense kullanılır."
+        },
+        {
+          "question": "Complete the sentence: She ___ (be) to London many times.",
+          "options": ["was", "has been", "is", "have been"],
+          "answer": "has been",
+          "explanation": "'Many times' ifadesi deneyim belirttiği için Present Perfect Tense kullanılır."
+        }
+      ]
+    },
+    {
+      "id": "comparatives-superlatives-detail",
+      "topicId": "comparatives-superlatives",
+      "title": "Karşılaştırmalı ve En Üstünlük Sıfatları (Comparatives & Superlatives)",
+      "explanation": "Sıfatları kullanarak iki şeyi karşılaştırmak için <strong>karşılaştırmalı sıfatları (comparatives)</strong>, üç veya daha fazla şey arasında en üstün olanı belirtmek için ise <strong>en üstünlük sıfatlarını (superlatives)</strong> kullanırız.",
+      "rules": [
+        "<strong>Tek Heceli Sıfatlar:</strong>",
+        "  - Karşılaştırma: Sıfata '-er' eklenir. (e.g., tall -> taller, small -> smaller)",
+        "  - En Üstünlük: Sıfatın önüne 'the', sonuna '-est' eklenir. (e.g., the tallest, the smallest)",
+        "<strong>İki veya Daha Fazla Heceli Sıfatlar:</strong>",
+        "  - Karşılaştırma: Sıfatın önüne 'more' eklenir. (e.g., more beautiful, more difficult)",
+        "  - En Üstünlük: Sıfatın önüne 'the most' eklenir. (e.g., the most beautiful, the most difficult)",
+        "<strong>Düzensiz Sıfatlar:</strong>",
+        "  - good -> better -> the best",
+        "  - bad -> worse -> the worst",
+        "  - far -> farther/further -> the farthest/furthest",
+        "Karşılaştırma yaparken 'than' (daha ... -den) kullanılır.",
+        "En üstünlük belirtirken grubun tamamını ifade eden 'in' veya 'of' edatları kullanılabilir (e.g., the tallest in the class, the best of all)."
+      ],
+      "examples": [
+        {
+          "english": "My car is <strong>faster than</strong> yours.",
+          "turkish": "Benim arabam seninkinden daha hızlı.",
+          "highlight": "faster than"
+        },
+        {
+          "english": "She is <strong>the smartest</strong> student in the class.",
+          "turkish": "O sınıftaki en zeki öğrencidir.",
+          "highlight": "the smartest"
+        },
+        {
+          "english": "This book is <strong>more interesting than</strong> that one.",
+          "turkish": "Bu kitap ondan daha ilginç.",
+          "highlight": "more interesting than"
+        },
+        {
+          "english": "He is <strong>the most talented</strong> musician in the band.",
+          "turkish": "O gruptaki en yetenekli müzisyen.",
+          "highlight": "the most talented"
+        },
+        {
+          "english": "Today's weather is <strong>worse than</strong> yesterday.",
+          "turkish": "Bugünün havası dünkünden daha kötü.",
+          "highlight": "worse than"
+        }
+      ],
+      "tips": [
+        "Sıfatların hece sayısına dikkat edin. Bu, hangi kuralın uygulanacağını belirler.",
+        "Düzensiz sıfatları ezberlemek, doğru kullanımı sağlar.",
+        "Karşılaştırma yaparken 'than' kelimesini doğru kullanmayı unutmayın."
+      ],
+      "quizzes": [
+        {
+          "question": "Complete the sentence: This is (big) house I've ever seen.",
+          "options": ["bigger", "the biggest", "more big", "most big"],
+          "answer": "the biggest",
+          "explanation": "Ever seen ifadesi en üstünlüğü gerektirir ve 'big' tek heceli bir sıfattır."
+        },
+        {
+          "question": "Choose the correct form: My brother is (tall) than me.",
+          "options": ["tall", "taller", "the tallest", "more tall"],
+          "answer": "taller",
+          "explanation": "'Than' kelimesi karşılaştırma yapıldığını gösterir ve 'tall' tek hecelidir."
+        }
+      ]
+    },
+    {
+      "id": "modals-permission-ability-detail",
+      "topicId": "modals-permission-ability",
+      "title": "Kip Fiilleri: İzin ve Yetenek (Modals: Permission & Ability)",
+      "explanation": "Kip fiilleri (modal verbs), bir eylemin olasılığını, zorunluluğunu, iznini veya yeteneğini ifade etmek için kullanılan yardımcı fiillerdir. Burada 'can', 'could', 'may' ve 'might' fiillerinin izin ve yetenek anlamlarını inceleyeceğiz.",
+      "rules": [
+        "<strong>Can:</strong> Yetenek ve izin bildirmek için kullanılır.",
+        "  - Yetenek: I <strong>can</strong> swim. (Yüzebilirim.)",
+        "  - İzin: You <strong>can</strong> go now. (Şimdi gidebilirsin.)",
+        "<strong>Could:</strong> 'Can' fiilinin geçmiş hali olarak yetenek veya daha nazik bir izin isteme/verme için kullanılır.",
+        "  - Geçmişteki yetenek: I <strong>could</strong> run fast when I was young. (Gençken hızlı koşabilirdim.)",
+        "  - Nazik rica/izin: <strong>Could</strong> I borrow your pen? (Kaleminizi ödünç alabilir miyim?)",
+        "<strong>May:</strong> Daha resmi bir izin isteme/verme ve olasılık belirtmek için kullanılır.",
+        "  - İzin: You <strong>may</strong> enter. (Girebilirsiniz.)",
+        "  - Olasılık: It <strong>may</strong> rain later. (Sonra yağmur yağabilir.)",
+        "<strong>Might:</strong> 'May' fiilinin geçmiş hali olup, daha düşük bir olasılık belirtmek için kullanılır.",
+        "  - Olasılık: I <strong>might</strong> go to the party, I'm not sure yet. (Partiye gidebilirim, henüz emin değilim.)",
+        "Tüm modal fiillerden sonra fiilin daima yalın hali (infinitive without 'to') kullanılır.",
+        "Modal fiillerden sonra '-s' takısı veya '-ing' eki gelmez."
+      ],
+      "examples": [
+        {
+          "english": "She <strong>can</strong> speak three languages.",
+          "turkish": "O üç dil konuşabilir.",
+          "highlight": "can speak"
+        },
+        {
+          "english": "<strong>Could</strong> you please help me with this box?",
+          "turkish": "Bu kutuda bana yardım edebilir misiniz lütfen?",
+          "highlight": "Could help"
+        },
+        {
+          "english": "You <strong>may</strong> take a break now.",
+          "turkish": "Şimdi mola verebilirsiniz.",
+          "highlight": "may take"
+        },
+        {
+          "english": "He <strong>might</strong> be late for the meeting.",
+          "turkish": "Toplantıya geç kalabilir.",
+          "highlight": "might be"
+        },
+        {
+          "english": "I <strong>can't</strong> hear you.",
+          "turkish": "Seni duyamıyorum.",
+          "highlight": "can't hear"
+        }
+      ],
+      "tips": [
+        "'Can' ve 'could' yetenek, 'may' ve 'might' ise olasılık ve izin için kullanılır.",
+        "'May' 'can'den daha resmi, 'might' ise 'may'den daha az kesin olasılık belirtir.",
+        "Modal fiillerden sonra fiilin hep yalın halde geldiğini unutmayın."
+      ],
+      "quizzes": [
+        {
+          "question": "Choose the best modal verb: I ___ swim when I was five years old.",
+          "options": ["can", "could", "may", "might"],
+          "answer": "could",
+          "explanation": "Geçmişteki bir yetenekten bahsedildiği için 'could' kullanılır."
+        },
+        {
+          "question": "Fill in the blank: ___ I sit here? (Asking for polite permission)",
+          "options": ["Can", "Might", "Could", "Should"],
+          "answer": "Could",
+          "explanation": "Nazik bir izin isteme durumu olduğu için 'could' uygundur."
+        }
+      ]
+    },
+    {
+      "id": "first-conditional-detail",
+      "topicId": "first-conditional",
+      "title": "First Conditional (Tip 1 Koşul Cümleleri)",
+      "explanation": "First Conditional (Tip 1 Koşul Cümleleri), gelecekte gerçekleşme olasılığı yüksek olan bir koşul ve bu koşulun gerçekleşmesi durumunda ortaya çıkacak sonucu ifade etmek için kullanılır.",
+      "rules": [
+        "Yapı: <strong>If + Simple Present Tense, Will + Fiilin Yalın Hali</strong>",
+        "Koşul (if clause) Simple Present Tense ile, sonuç (main clause) ise 'will' ve fiilin yalın hali ile ifade edilir.",
+        "Cümlelerin sırası değişebilir, ancak 'if' cümlesi başta olduğunda virgül kullanılır. (e.g., If it rains, I will stay home. / I will stay home if it rains.)",
+        "Olumsuz cümlelerde 'don't/doesn't' (if clause'da) veya 'won't' (main clause'da) kullanılır."
+      ],
+      "examples": [
+        {
+          "english": "If it <strong>rains</strong>, I <strong>will stay</strong> at home.",
+          "turkish": "Yağmur yağarsa, evde kalacağım.",
+          "highlight": "rains, will stay"
+        },
+        {
+          "english": "If you <strong>study</strong> hard, you <strong>will pass</strong> the exam.",
+          "turkish": "Sıkı çalışırsan, sınavı geçeceksin.",
+          "highlight": "study, will pass"
+        },
+        {
+          "english": "She <strong>will be</strong> happy if she <strong>gets</strong> the job.",
+          "turkish": "İşi alırsa mutlu olacak.",
+          "highlight": "will be, gets"
+        },
+        {
+          "english": "If I <strong>don't hurry</strong>, I <strong>won't catch</strong> the bus.",
+          "turkish": "Acele etmezsem, otobüsü kaçıracağım.",
+          "highlight": "don't hurry, won't catch"
+        }
+      ],
+      "tips": [
+        "Gelecekteki <strong>gerçekçi</strong> durumlar ve sonuçları için kullanılır.",
+        "'If' yerine 'when' (eğer/olduğu zaman) de kullanılabilir, ancak 'when' daha kesinlik ifade eder.",
+        "Unutmayın, 'if' cümlesinde 'will' kullanılmaz."
+      ],
+      "quizzes": [
+        {
+          "question": "Complete the sentence: If she (come), I ___ (tell) her the news.",
+          "options": ["comes, will tell", "will come, tell", "came, told", "will come, will tell"],
+          "answer": "comes, will tell",
+          "explanation": "First Conditional yapısına göre 'if' cümlesi Simple Present, diğer cümle 'will' ile kurulur."
+        },
+        {
+          "question": "Choose the correct form: If he (not/study), he ___ (fail) the test.",
+          "options": ["doesn't study, will fail", "won't study, fails", "didn't study, would fail", "not study, fails"],
+          "answer": "doesn't study, will fail",
+          "explanation": "Olumsuz Simple Present ve Simple Future kullanımı doğrudur."
+        }
+      ]
+    },
+    {
+      "id": "passive-voice-beginner-detail",
+      "topicId": "passive-voice-beginner",
+      "title": "Edilgen Çatı (Passive Voice) - Başlangıç",
+      "explanation": "Edilgen çatı (Passive Voice), bir eylemi yapan (özne) yerine, eylemden etkilenen (nesne) üzerine odaklanmak istediğimizde kullanılır. Özellikle eylemi yapanın kim olduğu bilinmediğinde veya önemsiz olduğunda tercih edilir.",
+      "rules": [
+        "Yapı: <strong>Nesne + To Be fiili (zamana göre çekimlenmiş) + Fiilin Üçüncü Hali (Past Participle)</strong>",
+        "Eylemi yapanı belirtmek istersek, cümlenin sonuna 'by + Özne' ekleyebiliriz.",
+        "<strong>Simple Present Passive:</strong> Nesne + am/is/are + V3 (e.g., The house <strong>is built</strong>.)",
+        "<strong>Simple Past Passive:</strong> Nesne + was/were + V3 (e.g., The letter <strong>was written</strong>.)"
+      ],
+      "examples": [
+        {
+          "english": "The car <strong>is washed</strong> every week.",
+          "turkish": "Araba her hafta yıkanır.",
+          "highlight": "is washed"
+        },
+        {
+          "english": "The book <strong>was written</strong> by a famous author.",
+          "turkish": "Kitap ünlü bir yazar tarafından yazıldı.",
+          "highlight": "was written"
+        },
+        {
+          "english": "English <strong>is spoken</strong> all over the world.",
+          "turkish": "İngilizce tüm dünyada konuşulur.",
+          "highlight": "is spoken"
+        },
+        {
+          "english": "The window <strong>was broken</strong> last night.",
+          "turkish": "Pencere dün gece kırıldı.",
+          "highlight": "was broken"
+        }
+      ],
+      "tips": [
+        "Edilgen çatıda her zaman 'to be' fiilinin uygun zaman çekimi ve ana fiilin üçüncü hali (Past Participle) kullanılır.",
+        "Eylemi yapan önemliyse 'by' kullanın, değilse kullanmaya gerek yoktur.",
+        "Genellikle 'passive voice' haberlerde, bilimsel makalelerde veya genel gerçekleri belirtirken kullanılır."
+      ],
+      "quizzes": [
+        {
+          "question": "Turn into passive: Someone built this house in 1990. (This house ___ in 1990.)",
+          "options": ["is built", "was built", "built", "has built"],
+          "answer": "was built",
+          "explanation": "Eylem geçmişte olduğu için Simple Past Passive kullanılır."
+        },
+        {
+          "question": "Choose the correct passive form: Coffee ___ (grow) in Brazil.",
+          "options": ["is grown", "grows", "is growing", "grew"],
+          "answer": "is grown",
+          "explanation": "Genel bir gerçek olduğu için Simple Present Passive kullanılır."
+        }
+      ]
+    },
+    {
+      "id": "quantifiers-detail",
+      "topicId": "quantifiers",
+      "title": "Miktar Belirteçleri (Quantifiers)",
+      "explanation": "Miktar belirteçleri (quantifiers), isimlerin miktarını belirtmek için kullanılır. Sayılabilen (countable) ve sayılamayan (uncountable) isimlerle farklı miktar belirteçleri kullanılır.",
+      "rules": [
+        "<strong>Sayılabilen İsimlerle (Countable Nouns):</strong>",
+        "  - <strong>many:</strong> Çok sayıda (e.g., many books, many friends)",
+        "  - <strong>a few:</strong> Birkaç (e.g., a few apples)",
+        "  - <strong>(a) lot of / lots of:</strong> Çok sayıda (hem sayılabilir hem sayılamayanlarla kullanılır)",
+        "  - <strong>some:</strong> Biraz, bazı (olumlu cümlelerde ve soru tekliflerinde)",
+        "  - <strong>any:</strong> Hiç (olumsuz cümlelerde ve genel sorularda)",
+        "<strong>Sayılamayan İsimlerle (Uncountable Nouns):</strong>",
+        "  - <strong>much:</strong> Çok (e.g., much water, much information)",
+        "  - <strong>a little:</strong> Biraz (e.g., a little sugar)",
+        "  - <strong>(a) lot of / lots of:</strong> Çok (hem sayılabilir hem sayılamayanlarla kullanılır)",
+        "  - <strong>some:</strong> Biraz (olumlu cümlelerde ve soru tekliflerinde)",
+        "  - <strong>any:</strong> Hiç (olumsuz cümlelerde ve genel sorularda)",
+        "<strong>Both (Her ikisiyle):</strong> a lot of / lots of, some, any, no"
+      ],
+      "examples": [
+        {
+          "english": "I have <strong>many</strong> friends.",
+          "turkish": "Çok arkadaşım var.",
+          "highlight": "many"
+        },
+        {
+          "english": "There is <strong>a little</strong> milk in the fridge.",
+          "turkish": "Buzdolabında biraz süt var.",
+          "highlight": "a little"
+        },
+        {
+          "english": "She bought <strong>some</strong> new clothes.",
+          "turkish": "Biraz yeni kıyafet aldı.",
+          "highlight": "some"
+        },
+        {
+          "english": "Do you have <strong>any</strong> questions?",
+          "turkish": "Hiç sorunuz var mı?",
+          "highlight": "any"
+        },
+        {
+          "english": "We have <strong>a lot of</strong> work to do.",
+          "turkish": "Yapacak çok işimiz var.",
+          "highlight": "a lot of"
+        }
+      ],
+      "tips": [
+        "İsimlerin sayılabilir veya sayılamaz olduğunu bilmek, doğru miktar belirtecini seçmek için kritiktir.",
+        "'Some' olumlu cümlelerde ve tekliflerde, 'any' ise olumsuz cümlelerde ve genel sorularda kullanılır.",
+        "Günlük konuşmada 'a lot of' hem 'much' hem de 'many' yerine sıkça kullanılır."
+      ],
+      "quizzes": [
+        {
+          "question": "Choose the correct quantifier: There isn't ___ water in the bottle.",
+          "options": ["many", "much", "a few", "a lot"],
+          "answer": "much",
+          "explanation": "'Water' sayılamayan bir isimdir ve olumsuz cümle olduğu için 'much' kullanılır."
+        },
+        {
+          "question": "Fill in the blank: I need ___ new shoes.",
+          "options": ["any", "much", "some", "a little"],
+          "answer": "some",
+          "explanation": "Olumlu bir cümle ve 'shoes' sayılabilir, bu yüzden 'some' uygundur."
+        }
+      ]
+    },
+    {
+      "id": "used-to-detail",
+      "topicId": "used-to",
+      "title": "Used To (Geçmiş Alışkanlıklar)",
+      "explanation": "'Used to' yapısı, geçmişte düzenli olarak yapılan ancak şimdi yapılmayan alışkanlıkları veya geçmişteki bir durumu ifade etmek için kullanılır.",
+      "rules": [
+        "Yapı: <strong>Özne + used to + Fiilin Yalın Hali</strong>",
+        "Sadece geçmiş alışkanlıklar ve durumlar için kullanılır, şimdiki zaman için kullanılmaz.",
+        "Olumsuz cümlelerde: <strong>Özne + didn't use to + Fiilin Yalın Hali</strong>",
+        "Soru cümlelerinde: <strong>Did + Özne + use to + Fiilin Yalın Hali?</strong>"
+      ],
+      "examples": [
+        {
+          "english": "I <strong>used to play</strong> football when I was younger.",
+          "turkish": "Gençken futbol oynardım.",
+          "highlight": "used to play"
+        },
+        {
+          "english": "She <strong>used to live</strong> in a small village.",
+          "turkish": "O küçük bir köyde yaşardı.",
+          "highlight": "used to live"
+        },
+        {
+          "english": "He <strong>didn't use to like</strong> vegetables.",
+          "turkish": "O sebzeleri sevmezdi.",
+          "highlight": "didn't use to like"
+        },
+        {
+          "english": "<strong>Did</strong> you <strong>use to wear</strong> glasses?",
+          "turkish": "Gözlük takar mıydın?",
+          "highlight": "Did use to wear"
+        }
+      ],
+      "tips": [
+        "Şimdiki zamanla karşılaştırma yaparken çok kullanışlıdır: 'I used to play, but now I don't.'",
+        "Olumsuz ve soru cümlelerinde 'used to' yerine 'use to' geldiğine dikkat edin ('d' düşer).",
+        "'Would' fiili de benzer bir anlam taşır ancak 'used to' kadar geniş kapsamlı değildir ve durumlar için kullanılamaz."
+      ],
+      "quizzes": [
+        {
+          "question": "Complete the sentence: My grandma ___ (tell) us stories every night.",
+          "options": ["used to telling", "use to tell", "used to tell", "would told"],
+          "answer": "used to tell",
+          "explanation": "Geçmiş bir alışkanlık belirtildiği için 'used to' ve fiilin yalın hali kullanılır."
+        },
+        {
+          "question": "Choose the correct negative form: They (not/used to) travel much.",
+          "options": ["didn't used to", "didn't use to", "not used to", "wouldn't use to"],
+          "answer": "didn't use to",
+          "explanation": "Olumsuz formda 'didn't use to' kullanılır, 'd' harfi düşer."
+        }
+      ]
+    },
+    {
+      "id": "present-perfect-continuous-detail",
+      "topicId": "present-perfect-continuous",
+      "title": "Present Perfect Continuous Tense",
+      "explanation": "Present Perfect Continuous Tense, geçmişte başlayıp hala devam eden veya yakın zamanda bitmiş ancak etkisi şu anda da devam eden eylemleri ifade etmek için kullanılır. Eylemin süresi veya ne kadar süredir devam ettiği vurgulanır.",
+      "rules": [
+        "Yapı: <strong>Özne + have/has been + fiil + -ing</strong>",
+        "I/You/We/They özneleriyle 'have been', He/She/It özneleriyle 'has been' kullanılır.",
+        "Olumsuz cümlelerde 'not' kelimesi 'have/has' fiillerinden sonra gelir. (e.g., haven't been working, hasn't been raining)",
+        "Soru cümlelerinde 'Have/Has' cümlenin başına gelir. (e.g., Have you been waiting?, Has she been studying?)"
+      ],
+      "examples": [
+        {
+          "english": "I <strong>have been studying</strong> English for three hours.",
+          "turkish": "Üç saattir İngilizce çalışıyorum.",
+          "highlight": "have been studying"
+        },
+        {
+          "english": "She <strong>has been working</strong> here since 2020.",
+          "turkish": "O 2020'den beri burada çalışıyor.",
+          "highlight": "has been working"
+        },
+        {
+          "english": "It <strong>has been raining</strong> all day.",
+          "turkish": "Bütün gün yağmur yağıyor.",
+          "highlight": "has been raining"
+        },
+        {
+          "english": "They <strong>haven't been feeling</strong> well recently.",
+          "turkish": "Son zamanlarda iyi hissetmiyorlar.",
+          "highlight": "haven't been feeling"
+        }
+      ],
+      "tips": [
+        "'For' ve 'since' edatları bu tense ile çok sık kullanılır.",
+        "Eylemin sonucundan çok, eylemin devamlılığı ve süresi önemlidir.",
+        "Kısa süreli veya tamamlanmış eylemler için genellikle Present Perfect Tense tercih edilir."
+      ],
+      "quizzes": [
+        {
+          "question": "Choose the correct form: He ___ (wait) for you for an hour.",
+          "options": ["has waited", "is waiting", "has been waiting", "waited"],
+          "answer": "has been waiting",
+          "explanation": "Eylemin belirli bir süredir devam ettiğini gösterdiği için Present Perfect Continuous kullanılır."
+        },
+        {
+          "question": "Fill in the blank: How long ___ you ___ (learn) English?",
+          "options": ["have, learned", "have, been learning", "are, learning", "did, learn"],
+          "answer": "have, been learning",
+          "explanation": "Eylemin ne kadar süredir devam ettiğini sorduğu için Present Perfect Continuous soru yapısı kullanılır."
+        }
+      ]
+    },
+    {
+      "id": "past-perfect-detail",
+      "topicId": "past-perfect",
+      "title": "Past Perfect Tense (Mişli Geçmiş Zaman)",
+      "explanation": "Past Perfect Tense, geçmişte gerçekleşen iki olaydan daha önce olanı belirtmek için kullanılır. Genellikle 'before', 'after', 'by the time', 'when' gibi bağlaçlarla birlikte görülür.",
+      "rules": [
+        "Yapı: <strong>Özne + had + Fiilin Üçüncü Hali (Past Participle)</strong>",
+        "Hem düzenli hem de düzensiz fiiller için fiilin üçüncü hali kullanılır.",
+        "Olumsuz cümlelerde 'not' kelimesi 'had' fiilinden sonra gelir. (e.g., hadn't eaten, hadn't arrived)",
+        "Soru cümlelerinde 'Had' cümlenin başına gelir. (e.g., Had you finished?, Had she left?)"
+      ],
+      "examples": [
+        {
+          "english": "When I arrived, they <strong>had already eaten</strong> dinner.",
+          "turkish": "Ben vardığımda, onlar akşam yemeğini çoktan yemişlerdi.",
+          "highlight": "had already eaten"
+        },
+        {
+          "english": "She finally passed the exam because she <strong>had studied</strong> very hard.",
+          "turkish": "Çok sıkı çalıştığı için nihayet sınavı geçti.",
+          "highlight": "had studied"
+        },
+        {
+          "english": "I <strong>had never seen</strong> such a beautiful place before I visited Rome.",
+          "turkish": "Roma'yı ziyaret etmeden önce hiç bu kadar güzel bir yer görmemiştim.",
+          "highlight": "had never seen"
+        },
+        {
+          "english": "By the time we got to the cinema, the movie <strong>had started</strong>.",
+          "turkish": "Sinemaya vardığımızda film başlamıştı.",
+          "highlight": "had started"
+        }
+      ],
+      "tips": [
+        "Geçmişteki iki olayı kronolojik olarak sıralamak için kullanılır: Daha eski olan olay Past Perfect, daha yeni olan olay Simple Past ile ifade edilir.",
+        "Sıklıkla 'already', 'just', 'yet' gibi zarflarla kullanılır.",
+        "Fiillerin üçüncü hallerini bilmek bu tense için de hayati önem taşır."
+      ],
+      "quizzes": [
+        {
+          "question": "Choose the correct form: By the time I arrived, he ___ (leave).",
+          "options": ["left", "had left", "was leaving", "leaves"],
+          "answer": "had left",
+          "explanation": "Benim varmamdan önce gerçekleşen eylem olduğu için Past Perfect kullanılır."
+        },
+        {
+          "question": "Complete the sentence: She couldn't get in because she ___ (forget) her keys.",
+          "options": ["forgot", "had forgotten", "forgets", "was forgetting"],
+          "answer": "had forgotten",
+          "explanation": "Anahtarları unutma eylemi, içeri girememesinden önce gerçekleştiği için Past Perfect kullanılır."
+        }
+      ]
+    },
+    {
+      "id": "future-tenses-detail",
+      "topicId": "future-tenses",
+      "title": "Gelecek Zamanlar (Future Tenses)",
+      "explanation": "İngilizcede gelecekle ilgili konuşmak için farklı yapılar kullanılır. Bu yapılar, gelecekteki eylemlerin kesinlik derecesine, planlanma durumuna veya konuşma anındaki kararlara göre değişir.",
+      "rules": [
+        "<strong>Will (Future Simple):</strong> Anlık kararlar, tahminler (kanıt olmadan), söz verme, teklifler, rica.",
+        "  - Yapı: Özne + will + Fiilin Yalın Hali (e.g., I will call you later.)",
+        "<strong>Be Going To:</strong> Önceden yapılmış planlar, niyetler, görünür kanıtlara dayalı tahminler.",
+        "  - Yapı: Özne + am/is/are + going to + Fiilin Yalın Hali (e.g., She is going to visit her aunt.)",
+        "<strong>Present Continuous for Future:</strong> Yakın gelecekteki kesinleşmiş düzenlemeler veya randevular.",
+        "  - Yapı: Özne + am/is/are + fiil + -ing (zaman belirteci ile) (e.g., We are meeting at 7 PM.)",
+        "<strong>Simple Present for Future:</strong> Programlar, tarifeler (tren, uçak, sinema vb.) gibi sabit ve düzenli gelecek olaylar.",
+        "  - Yapı: Özne + Fiilin Yalın Hali (Simple Present kuralları) (e.g., The train leaves at 8 AM.)"
+      ],
+      "examples": [
+        {
+          "english": "I'm tired. I think I <strong>'ll go</strong> to bed early tonight.",
+          "turkish": "Yorgunum. Sanırım bu gece erken yatacağım.",
+          "highlight": "'ll go"
+        },
+        {
+          "english": "Look at those dark clouds! It <strong>'s going to rain</strong>.",
+          "turkish": "Şu koyu bulutlara bak! Yağmur yağacak.",
+          "highlight": "'s going to rain"
+        },
+        {
+          "english": "They <strong>are having</strong> dinner with their parents tomorrow evening.",
+          "turkish": "Yarın akşam ebeveynleriyle yemek yiyecekler.",
+          "highlight": "are having"
+        },
+        {
+          "english": "The flight <strong>departs</strong> at 6:00 AM.",
+          "turkish": "Uçuş sabah 6'da kalkıyor.",
+          "highlight": "departs"
+        },
+        {
+          "english": "I <strong>won't tell</strong> anyone your secret.",
+          "turkish": "Kimseye sırrını söylemeyeceğim.",
+          "highlight": "won't tell"
+        }
+      ],
+      "tips": [
+        "Hangi gelecek zaman formunun kullanılacağı, eylemin ne kadar planlı, kesin veya anlık bir karar olduğuna bağlıdır.",
+        "'Will' daha spontane, 'be going to' daha planlıdır.",
+        "Present Continuous, kişisel ve kesinleşmiş gelecek planları için yaygındır."
+      ],
+      "quizzes": [
+        {
+          "question": "Choose the correct future form: I ___ (meet) my friend for coffee tomorrow. (It's a definite plan)",
+          "options": ["will meet", "am meeting", "am going to meet", "meet"],
+          "answer": "am meeting",
+          "explanation": "Kesinleşmiş bir plan olduğu için Present Continuous en uygunudur."
+        },
+        {
+          "question": "Fill in the blank: Oh no, I dropped my keys! I ___ (help) you.",
+          "options": ["am going to help", "am helping", "will help", "help"],
+          "answer": "will help",
+          "explanation": "Anlık bir karar veya teklif olduğu için 'will' kullanılır."
+        }
+      ]
+    },
+    {
+      "id": "reported-speech-detail",
+      "topicId": "reported-speech",
+      "title": "Aktarılan Konuşma (Reported Speech)",
+      "explanation": "Aktarılan konuşma (Reported Speech veya Indirect Speech), bir başkasının söylediklerini veya sorularını doğrudan tırnak işaretleri kullanmadan aktarmak için kullanılır. Aktarılan cümlelerde genellikle zaman kayması (tense shift) meydana gelir.",
+      "rules": [
+        "<strong>Zaman Kayması (Tense Shift):</strong>",
+        "  - Simple Present -> Simple Past (e.g., 'I like coffee.' -> He said he liked coffee.)",
+        "  - Present Continuous -> Past Continuous (e.g., 'I am studying.' -> She said she was studying.)",
+        "  - Simple Past -> Past Perfect (e.g., 'I went home.' -> He said he had gone home.)",
+        "  - Present Perfect -> Past Perfect (e.g., 'I have finished.' -> She said she had finished.)",
+        "  - Will -> Would (e.g., 'I will help.' -> He said he would help.)",
+        "<strong>Zamir Değişikliği:</strong> Cümledeki zamirler (I, you, my, your vb.) aktarılan konuşmaya göre değişir.",
+        "<strong>Zaman ve Yer Belirteçleri:</strong> Zaman ve yer belirten kelimeler de değişebilir.",
+        "  - now -> then",
+        "  - today -> that day",
+        "  - yesterday -> the day before / the previous day",
+        "  - tomorrow -> the next day / the following day",
+        "  - here -> there",
+        "  - this -> that",
+        "  - these -> those",
+        "<strong>Soru Cümleleri:</strong>",
+        "  - Yes/No soruları için 'if' veya 'whether' kullanılır. (e.g., 'Are you happy?' -> She asked if I was happy.)",
+        "  - Wh- soruları için soru kelimesi korunur. (e.g., 'Where do you live?' -> He asked where I lived.)",
+        "  - Soru kelimesinden sonra cümle yapısı düz cümle gibi olur (özne + fiil).",
+        "<strong>Emir Cümleleri:</strong> 'To tell/ask/order' + nesne + to + fiilin yalın hali (e.g., 'Sit down!' -> He told me to sit down.)"
+      ],
+      "examples": [
+        {
+          "english": "Direct: 'I am reading a book.'<br>Reported: She said she <strong>was reading</strong> a book.",
+          "turkish": "Doğrudan: 'Kitap okuyorum.'<br>Aktarılan: Kitap okuduğunu söyledi.",
+          "highlight": "was reading"
+        },
+        {
+          "english": "Direct: 'We went to the park yesterday.'<br>Reported: They said they <strong>had gone</strong> to the park <strong>the day before</strong>.",
+          "turkish": "Doğrudan: 'Dün parka gittik.'<br>Aktarılan: Onlar bir önceki gün parka gittiklerini söylediler.",
+          "highlight": "had gone, the day before"
+        },
+        {
+          "english": "Direct: 'Are you coming?'<br>Reported: He asked <strong>if I was coming</strong>.",
+          "turkish": "Doğrudan: 'Geliyor musun?'<br>Aktarılan: Gelip gelmediğimi sordu.",
+          "highlight": "if I was coming"
+        },
+        {
+          "english": "Direct: 'Close the door!'<br>Reported: She told me <strong>to close</strong> the door.",
+          "turkish": "Doğrudan: 'Kapıyı kapat!'<br>Aktarılan: Bana kapıyı kapatmamı söyledi.",
+          "highlight": "to close"
+        }
+      ],
+      "tips": [
+        "Zaman kayması ve zamir değişikliklerine özellikle dikkat edin.",
+        "Soru cümlelerini aktarırken, 'if/whether' veya Wh- kelimesinden sonra cümlenin düz cümle sırasına döndüğünü unutmayın.",
+        "Aktarılan konuşma cümlelerinde virgül ve tırnak işareti kullanılmaz."
+      ],
+      "quizzes": [
+        {
+          "question": "Turn into reported speech: He said, 'I will call you tomorrow.'",
+          "options": ["He said he will call me tomorrow.", "He said he would call me the next day.", "He said he would call you tomorrow.", "He said he calls me the next day."],
+          "answer": "He said he would call me the next day.",
+          "explanation": "'Will' -> 'would' ve 'tomorrow' -> 'the next day' dönüşümleri yapılır."
+        },
+        {
+          "question": "Turn into reported speech: She asked, 'Where is the station?'",
+          "options": ["She asked where the station was.", "She asked where was the station.", "She asked where is the station.", "She asked if the station was there."],
+          "answer": "She asked where the station was.",
+          "explanation": "Wh- sorusu olduğu için Wh- kelimesi korunur ve ardından düz cümle yapısı gelir."
+        }
+      ]
+    },
+    {
+      "id": "passive-voice-advanced-detail",
+      "topicId": "passive-voice-advanced",
+      "title": "Edilgen Çatı (Passive Voice) - İleri Seviye",
+      "explanation": "Edilgen çatı, farklı zaman yapıları ve modal fiillerle de kullanılabilir, bu da cümlelere daha fazla esneklik ve anlam derinliği katar. Eylemi yapanın değil, eylemden etkilenen nesnenin vurgulandığı durumlar için idealdir.",
+      "rules": [
+        "Genel Yapı: <strong>Nesne + To Be Fiili (Uygun Zaman/Modal Çekimi) + Fiilin Üçüncü Hali (Past Participle)</strong>",
+        "<strong>Present Continuous Passive:</strong> Nesne + am/is/are + being + V3 (e.g., The house <strong>is being built</strong>.)",
+        "<strong>Present Perfect Passive:</strong> Nesne + have/has + been + V3 (e.g., The car <strong>has been repaired</strong>.)",
+        "<strong>Future Simple Passive:</strong> Nesne + will + be + V3 (e.g., The report <strong>will be submitted</strong>.)",
+        "<strong>Modal Verb Passive:</strong> Nesne + modal verb + be + V3 (e.g., The problem <strong>can be solved</strong>.)",
+        "<strong>Modal Perfect Passive:</strong> Nesne + modal verb + have been + V3 (e.g., The letter <strong>should have been sent</strong>.)"
+      ],
+      "examples": [
+        {
+          "english": "The new bridge <strong>is being built</strong>.",
+          "turkish": "Yeni köprü inşa ediliyor.",
+          "highlight": "is being built"
+        },
+        {
+          "english": "All the tickets <strong>have been sold</strong> out.",
+          "turkish": "Tüm biletler satıldı.",
+          "highlight": "have been sold"
+        },
+        {
+          "english": "The meeting <strong>will be postponed</strong> until next week.",
+          "turkish": "Toplantı gelecek haftaya ertelenecek.",
+          "highlight": "will be postponed"
+        },
+        {
+          "english": "Your passport <strong>can be collected</strong> tomorrow.",
+          "turkish": "Pasaportunuzu yarın alabilirsiniz.",
+          "highlight": "can be collected"
+        },
+        {
+          "english": "The mistake <strong>should have been avoided</strong>.",
+          "turkish": "Hatadan kaçınılmalıydı.",
+          "highlight": "should have been avoided"
+        }
+      ],
+      "tips": [
+        "Farklı zamanlar ve modal fiillerle passive voice oluşturmanın kalıplarını iyi kavrayın.",
+        "Özellikle bilimsel ve akademik yazılarda, haberlerde ve resmi belgelerde yaygın olarak kullanılır.",
+        "'By' ile eylemi yapanı ekleme kuralı tüm passive voice yapıları için geçerlidir."
+      ],
+      "quizzes": [
+        {
+          "question": "Turn into passive: Someone is cleaning the room right now. (The room ___ right now.)",
+          "options": ["is cleaned", "is being cleaned", "has been cleaned", "will be cleaned"],
+          "answer": "is being cleaned",
+          "explanation": "Şu an devam eden bir eylem olduğu için Present Continuous Passive kullanılır."
+        },
+        {
+          "question": "Choose the correct passive form: The report ___ (must/submit) by Friday.",
+          "options": ["must submit", "must be submitted", "must have submitted", "must been submitted"],
+          "answer": "must be submitted",
+          "explanation": "Modal fiil ile passive voice yapısı 'modal + be + V3' şeklindedir."
+        }
+      ]
+    },
+    {
+      "id": "relative-clauses-detail",
+      "topicId": "relative-clauses",
+      "title": "İlgi Zamirleri (Relative Clauses)",
+      "explanation": "İlgi zamirleri (Relative Clauses veya Adjective Clauses), bir isim veya zamir hakkında ek bilgi vermek için kullanılan yan cümlelerdir. Ana cümleyi daha ayrıntılı hale getirir ve tekrardan kaçınmayı sağlar.",
+      "rules": [
+        "<strong>Who:</strong> İnsanlar için özne veya nesne olarak kullanılır. (e.g., The man <strong>who lives next door</strong> is a doctor.)",
+        "<strong>Whom:</strong> İnsanlar için nesne olarak kullanılır (daha resmi). (e.g., The woman <strong>whom I saw</strong> was my teacher.)",
+        "<strong>Which:</strong> Hayvanlar ve cansız nesneler için kullanılır. (e.g., The car <strong>which is parked outside</strong> is mine.)",
+        "<strong>That:</strong> Hem insanlar hem de cansız nesneler için kullanılabilir (daha az resmi). (e.g., The book <strong>that I read</strong> was interesting.)",
+        "<strong>Whose:</strong> Sahiplik belirtmek için kullanılır. (e.g., The boy <strong>whose dog bit me</strong> apologized.)",
+        "<strong>Where:</strong> Yer belirtmek için kullanılır. (e.g., That's the house <strong>where I grew up</strong>.)",
+        "<strong>When:</strong> Zaman belirtmek için kullanılır. (e.g., I remember the day <strong>when we first met</strong>.)",
+        "<strong>Defining Relative Clauses:</strong> Cümlenin anlamı için gerekli olan bilgiyi sağlar. Virgül kullanılmaz.",
+        "<strong>Non-defining Relative Clauses:</strong> Ek bilgi sağlar, cümlenin anlamı için zorunlu değildir. Virgüllerle ayrılır. Bu türde 'that' kullanılmaz."
+      ],
+      "examples": [
+        {
+          "english": "This is the student <strong>who won the scholarship</strong>.",
+          "turkish": "Bu bursu kazanan öğrencidir.",
+          "highlight": "who won the scholarship"
+        },
+        {
+          "english": "I visited Rome, <strong>which is a beautiful city</strong>.",
+          "turkish": "Roma'yı ziyaret ettim, ki o güzel bir şehirdir.",
+          "highlight": "which is a beautiful city"
+        },
+        {
+          "english": "The film <strong>that we watched</strong> last night was amazing.",
+          "turkish": "Dün gece izlediğimiz film harikaydı.",
+          "highlight": "that we watched"
+        },
+        {
+          "english": "She showed me the park <strong>where they often play</strong>.",
+          "turkish": "Bana sık sık oynadıkları parkı gösterdi.",
+          "highlight": "where they often play"
+        }
+      ],
+      "tips": [
+        "İnsanlar için 'who/whom/that', nesneler/hayvanlar için 'which/that' kullanıldığını unutmayın.",
+        "Defining ve non-defining relative clause arasındaki virgül farkına dikkat edin. Non-defining cümleler olmadan da ana cümle anlamlıdır.",
+        "Sahiplik için her zaman 'whose' kullanılır."
+      ],
+      "quizzes": [
+        {
+          "question": "Choose the correct relative pronoun: This is the man ___ helped me.",
+          "options": ["which", "who", "where", "whose"],
+          "answer": "who",
+          "explanation": "'Man' insan olduğu ve özne konumunda olduğu için 'who' kullanılır."
+        },
+        {
+          "question": "Fill in the blank: I live in a city, ___ has many historical sites. (It's extra information)",
+          "options": ["that", "where", "which", "who"],
+          "answer": "which",
+          "explanation": "Ek bilgi veren bir yan cümle (non-defining) olduğu için 'which' kullanılır ve virgülle ayrılır."
+        }
+      ]
+    },
+    {
+      "id": "conditional-types-2-3-detail",
+      "topicId": "conditional-types-2-3",
+      "title": "Koşul Cümleleri (Conditional Types 2 & 3)",
+      "explanation": "First Conditional (Tip 1) gelecekte gerçekleşme olasılığı yüksek durumlar için kullanılırken, Type 2 ve Type 3 Koşul Cümleleri daha varsayımsal ve gerçek dışı durumları ifade eder.",
+      "rules": [
+        "<strong>Type 2 Conditional (İkinci Tip Koşul Cümlesi):</strong> Şimdiki zamanda veya gelecekte **gerçek dışı veya imkansız** olan durumlar ve bunların olası sonuçları için kullanılır.",
+        "  - Yapı: <strong>If + Simple Past Tense, Would + Fiilin Yalın Hali</strong>",
+        "  - 'If' cümlesinde 'to be' fiili için tüm öznelerle 'were' kullanmak daha resmidir, ancak 'was' da yaygın olarak kullanılır. (e.g., If I were rich, ...)",
+        "<strong>Type 3 Conditional (Üçüncü Tip Koşul Cümlesi):</strong> Geçmişte **gerçekleşmemiş bir durum** ve bu durumun geçmişteki **gerçekleşmemiş sonucu** için kullanılır. Pişmanlıkları veya kaçırılmış fırsatları ifade eder.",
+        "  - Yapı: <strong>If + Past Perfect Tense, Would Have + Fiilin Üçüncü Hali (Past Participle)</strong>"
+      ],
+      "examples": [
+        {
+          "english": "<strong>Type 2:</strong> If I <strong>won</strong> the lottery, I <strong>would buy</strong> a big house.",
+          "turkish": "Piyangoyu kazansaydım, büyük bir ev alırdım. (Ama kazanmam pek mümkün değil)",
+          "highlight": "won, would buy"
+        },
+        {
+          "english": "<strong>Type 2:</strong> If she <strong>knew</strong> his number, she <strong>would call</strong> him.",
+          "turkish": "Onun numarasını bilseydi, onu arardı. (Ama bilmiyor)",
+          "highlight": "knew, would call"
+        },
+        {
+          "english": "<strong>Type 3:</strong> If you <strong>had studied</strong> harder, you <strong>would have passed</strong> the exam.",
+          "turkish": "Daha sıkı çalışsaydın, sınavı geçerdin. (Ama çalışmadın ve geçemedin)",
+          "highlight": "had studied, would have passed"
+        },
+        {
+          "english": "<strong>Type 3:</strong> If I <strong>hadn't missed</strong> the bus, I <strong>wouldn't have been</strong> late.",
+          "turkish": "Otobüsü kaçırmasaydım, geç kalmazdım. (Ama kaçırdım ve geç kaldım)",
+          "highlight": "hadn't missed, wouldn't have been"
+        }
+      ],
+      "tips": [
+        "Type 2, şimdiki veya gelecekteki hayali durumlar için, Type 3 ise geçmişteki hayali (gerçekleşmemiş) durumlar için kullanılır.",
+        "Type 2'de 'if' cümlesinde 'were' kullanımı daha doğrudur, özellikle 'I' ve 'he/she/it' özneleriyle.",
+        "Type 3'te fiillerin üçüncü hallerini doğru kullanmak çok önemlidir."
+      ],
+      "quizzes": [
+        {
+          "question": "Choose the correct form (Type 2): If I ___ (be) taller, I ___ (play) basketball.",
+          "options": ["was, would play", "were, would play", "am, will play", "had been, would have played"],
+          "answer": "were, would play",
+          "explanation": "Gerçek dışı şimdiki zaman koşulu olduğu için Type 2 ve 'were' kullanılır."
+        },
+        {
+          "question": "Fill in the blank (Type 3): If she ___ (not/lose) her passport, she ___ (go) on vacation.",
+          "options": ["didn't lose, would go", "hadn't lost, would have gone", "loses, will go", "lost, would have gone"],
+          "answer": "hadn't lost, would have gone",
+          "explanation": "Geçmişte gerçekleşmemiş bir durumu ve sonucunu ifade ettiği için Type 3 kullanılır."
+        }
+      ]
+    },
+    {
+      "id": "gerunds-infinitives-detail",
+      "topicId": "gerunds-infinitives",
+      "title": "Gerund ve Infinitive Kullanımı",
+      "explanation": "İngilizcede bazı fiillerden sonra gelen ikinci fiil ya '-ing' eki almış bir 'gerund' (isim-fiil) şeklinde ya da 'to' ile kullanılan bir 'infinitive' (mastar) şeklinde olur. Hangi fiilin hangisini aldığı kurallara veya ezbere dayanır.",
+      "rules": [
+        "<strong>Gerund (-ing):</strong>",
+        "  - Fiil olarak kullanılan isimlerdir. (e.g., <strong>Swimming</strong> is good for health.)",
+        "  - Bazı fiillerden sonra gelir: enjoy, finish, avoid, mind, suggest, recommend, admit, deny, risk, consider, practice, keep, postpone, imagine, miss, involve, quit, resist, understand vb.",
+        "  - Edatlardan sonra gelir: (e.g., interested in <strong>learning</strong>, good at <strong>painting</strong>)",
+        "<strong>Infinitive (To + Verb):</strong>",
+        "  - Amaç belirtmek için kullanılır: (e.g., I went there <strong>to see</strong> him.)",
+        "  - Bazı fiillerden sonra gelir: want, need, decide, plan, hope, expect, promise, agree, refuse, manage, learn, pretend, seem, afford, arrange, choose, fail, tend, threaten vb.",
+        "  - Sıfatlardan sonra gelir: (e.g., easy <strong>to understand</strong>, happy <strong>to help</strong>)",
+        "  - 'Too' ve 'enough' ile kullanılır: (e.g., too difficult <strong>to read</strong>, smart enough <strong>to pass</strong>)",
+        "<strong>Hem Gerund Hem Infinitive Alan Fiiller:</strong> Anlamları değişebilir.",
+        "  - <strong>Stop:</strong> Gerund: Bir eylemi tamamen bırakmak (e.g., stop <strong>smoking</strong>). Infinitive: Bir şey yapmak için durmak (e.g., stop <strong>to smoke</strong>).",
+        "  - <strong>Remember:</strong> Gerund: Geçmişte yapılmış bir şeyi hatırlamak. Infinitive: Yapılması gereken bir şeyi hatırlamak.",
+        "  - <strong>Try:</strong> Gerund: Deney olarak bir şey yapmak. Infinitive: Bir şeyi başarmak için çabalamak."
+      ],
+      "examples": [
+        {
+          "english": "I enjoy <strong>reading</strong> books.",
+          "turkish": "Kitap okumaktan keyif alırım.",
+          "highlight": "reading"
+        },
+        {
+          "english": "She decided <strong>to study</strong> abroad.",
+          "turkish": "Yurt dışında okumaya karar verdi.",
+          "highlight": "to study"
+        },
+        {
+          "english": "He is good at <strong>solving</strong> problems.",
+          "turkish": "Problem çözmede iyidir.",
+          "highlight": "solving"
+        },
+        {
+          "english": "We stopped <strong>to have</strong> lunch.",
+          "turkish": "Öğle yemeği yemek için durduk.",
+          "highlight": "to have"
+        },
+        {
+          "english": "Don't forget <strong>to lock</strong> the door.",
+          "turkish": "Kapıyı kilitlemeyi unutma.",
+          "highlight": "to lock"
+        }
+      ],
+      "tips": [
+        "Fiillerin listelerini ezberlemek yerine, örnek cümlelerle birlikte pratik yaparak hangi fiilin hangi formu aldığını içselleştirin.",
+        "Özellikle anlamı değişen fiillere dikkat edin (stop, remember, try, forget vb.).",
+        "Edatlardan sonra her zaman gerund gelir."
+      ],
+      "quizzes": [
+        {
+          "question": "Choose the correct form: I want ___ (learn) French.",
+          "options": ["learning", "to learn", "learn", "learned"],
+          "answer": "to learn",
+          "explanation": "'Want' fiilinden sonra infinitive kullanılır."
+        },
+        {
+          "question": "Fill in the blank: She finished ___ (write) her essay.",
+          "options": ["to write", "writing", "write", "written"],
+          "answer": "writing",
+          "explanation": "'Finish' fiilinden sonra gerund kullanılır."
+        }
+      ]
+    },
+    {
+      "id": "modal-perfects-detail",
+      "topicId": "modal-perfects",
+      "title": "Kip Fiillerinin Mükemmel Halleri (Modal Perfects)",
+      "explanation": "Kip fiillerinin mükemmel halleri (Modal Perfects), geçmişle ilgili olasılıkları, çıkarımları, pişmanlıkları, eleştirileri veya kaçırılmış fırsatları ifade etmek için kullanılır. Genellikle 'modal verb + have + Past Participle (V3)' yapısındadırlar.",
+      "rules": [
+        "Genel Yapı: <strong>Modal Verb + Have + Fiilin Üçüncü Hali (Past Participle)</strong>",
+        "<strong>Should have + V3:</strong> Geçmişte yapılması gereken ama yapılmayan bir eyleme ilişkin pişmanlık, eleştiri veya öneri. (e.g., You <strong>should have studied</strong> harder.)",
+        "<strong>Could have + V3:</strong> Geçmişte mümkün olan ama gerçekleşmeyen bir eylem veya yetenek. (e.g., I <strong>could have gone</strong> to the party, but I chose not to.)",
+        "<strong>Might have + V3:</strong> Geçmişteki belirsiz bir olasılık veya tahmin. (e.g., He <strong>might have forgotten</strong> about the meeting.)",
+        "<strong>Must have + V3:</strong> Geçmişle ilgili güçlü bir çıkarım veya mantıklı bir sonuç. (e.g., She <strong>must have been</strong> tired after that long journey.)",
+        "<strong>May have + V3:</strong> Geçmişteki bir olasılık veya spekülasyon. 'Might have' ile benzerdir, ancak biraz daha yüksek bir olasılık ifade edebilir.",
+        "<strong>Would have + V3:</strong> Geçmişte farklı bir koşul olsaydı gerçekleşecek olan hayali bir sonuç (Conditional Type 3'ün sonucu)."
+      ],
+      "examples": [
+        {
+          "english": "You <strong>should have told</strong> me earlier.",
+          "turkish": "Bana daha önce söylemeliydin (ama söylemedin).",
+          "highlight": "should have told"
+        },
+        {
+          "english": "I <strong>could have helped</strong> you, but I didn't know you needed it.",
+          "turkish": "Sana yardım edebilirdim (ama ihtiyacın olduğunu bilmiyordum).",
+          "highlight": "could have helped"
+        },
+        {
+          "english": "He's not here. He <strong>might have gone</strong> home already.",
+          "turkish": "O burada değil. Belki çoktan eve gitmiştir.",
+          "highlight": "might have gone"
+        },
+        {
+          "english": "She looks exhausted. She <strong>must have worked</strong> all night.",
+          "turkish": "Çok yorgun görünüyor. Bütün gece çalışmış olmalı.",
+          "highlight": "must have worked"
+        },
+        {
+          "english": "If I had known, I <strong>would have come</strong>.",
+          "turkish": "Bilseydim, gelirdim.",
+          "highlight": "would have come"
+        }
+      ],
+      "tips": [
+        "Her bir modal perfect'ın taşıdığı anlam farkını iyi kavrayın (pişmanlık, olasılık, çıkarım vb.).",
+        "Tüm modal perfect'larda fiilin her zaman üçüncü halinin kullanıldığını unutmayın.",
+        "Geçmişle ilgili çıkarımlar yaparken 'must have' ve 'might have/may have' arasındaki kesinlik farkına dikkat edin."
+      ],
+      "quizzes": [
+        {
+          "question": "Choose the correct modal perfect: He didn't answer his phone. He ___ (sleep). (Strong deduction)",
+          "options": ["should have slept", "could have slept", "must have slept", "might sleep"],
+          "answer": "must have slept",
+          "explanation": "Telefonu açmaması güçlü bir çıkarımla uyumuş olması gerektiğini gösterir."
+        },
+        {
+          "question": "Fill in the blank: You ___ (call) me before you came. (Regret/Criticism)",
+          "options": ["should call", "should have called", "must call", "could call"],
+          "answer": "should have called",
+          "explanation": "Geçmişte yapılması gereken ama yapılmayan bir eyleme ilişkin pişmanlık/eleştiri olduğu için 'should have called' kullanılır."
+        }
+      ]
+    }
+  ]
+}

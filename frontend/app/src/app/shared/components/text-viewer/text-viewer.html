@@ -1,0 +1,19 @@
+<!-- Text Viewer Component Template -->
+<!-- Each word is rendered as a clickable span -->
+
+<div class="text-container">
+  <span
+    *ngFor="let word of text.split(' ')"
+    class="word"
+    (click)="showMeaning(word)"
+  >
+    {{ word }}
+  </span>
+</div>
+
+<!-- Meaning popup: shown when a word is selected -->
+<div class="popup" *ngIf="selectedWord()">
+  <strong>{{ selectedWord() }}</strong><br />
+  <em>{{ meaning() }}</em><br />
+  <button (click)="closePopup()">Close</button>
+</div>

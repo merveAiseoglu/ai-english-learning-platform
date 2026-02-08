@@ -1,0 +1,35 @@
+/**
+ * Text Viewer Component Styles
+ * Clickable word layout with meaning popup
+ */
+
+/* Word container */
+.text-container {
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* Individual clickable word */
+.word {
+  margin-right: 4px;
+  cursor: pointer;
+  background-color: #eef;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+/* Highlight on hover */
+.word:hover {
+  background-color: #cce;
+}
+
+/* Meaning popup */
+.popup {
+  margin-top: 16px;
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  max-width: 300px;
+}

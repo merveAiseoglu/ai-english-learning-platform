@@ -1,0 +1,342 @@
+<div class="writing-container" [class.history-visible]="showHistory">
+  <div class="main-content" *ngIf="!showHistory">
+    <h2>Writing Practice</h2>
+
+    <div class="filter-section">
+      <div class="filter-group">
+        <label for="levelSelect">Level:</label>
+        <select
+          id="levelSelect"
+          [(ngModel)]="selectedLevel"
+          (change)="onFilterChange()"
+          class="filter-select"
+        >
+          <option value="">All Levels</option>
+          <option *ngFor="let level of availableLevels" [value]="level">
+            {{ level }}
+          </option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="typeSelect">Type:</label>
+        <select
+          id="typeSelect"
+          [(ngModel)]="selectedType"
+          (change)="onFilterChange()"
+          class="filter-select"
+        >
+          <option value="">All Types</option>
+          <option *ngFor="let type of availableTypes" [value]="type">
+            {{ type }}
+          </option>
+        </select>
+      </div>
+      <button class="clear-filters-btn" (click)="clearFilters()">
+        🔄 Clear Filters
+      </button>
+    </div>
+
+    <div class="prompt-section" *ngIf="currentPrompt">
+      <div class="prompt-header">
+        <span
+          class="level-badge"
+          [class]="'level-' + currentPrompt.level.toLowerCase()"
+          >{{ currentPrompt.level }}</span
+        >
+        <span class="type-badge">{{ currentPrompt.type }}</span>
+      </div>
+      <h3>{{ currentPrompt.title }}</h3>
+      <p class="prompt-description">{{ currentPrompt.description }}</p>
+      <div class="prompt-info">
+        <span class="target-words"
+          >Target: {{ currentPrompt.targetWords }} words</span
+        >
+        <button class="new-prompt-btn" (click)="getNewPrompt()">
+          🎲 New Prompt
+        </button>
+      </div>
+    </div>
+    <div class="prompt-section" *ngIf="!currentPrompt">
+      <h3>Welcome!</h3>
+      <p>
+        Select a level and type above, or click "New Prompt" to get started.
+      </p>
+      <button class="new-prompt-btn" (click)="getNewPrompt()">
+        🎲 Get a Prompt
+      </button>
+    </div>
+
+    <div class="writing-area">
+      <textarea
+        [(ngModel)]="userText"
+        placeholder="Start writing here..."
+        class="text-editor"
+        rows="15"
+      ></textarea>
+      
+      <div class="correction-box" *ngIf="correctedText" style="margin-top: 20px; padding: 15px; background-color: #f0fdf4; border: 1px solid #86efac; border-radius: 8px;">
+        <h4 style="color: #166534; margin-top: 0;">✅ Grammar Correction:</h4>
+        <p style="white-space: pre-wrap; color: #14532d;">{{ correctedText }}</p>
+      </div>
+    </div>
+
+    <div class="stats-actions-bar">
+      <div class="stats">
+        <span
+          >Words: <b>{{ wordCount }}</b> /
+          {{ currentPrompt?.targetWords || 0 }}</span
+        >
+        <span
+          >Characters: <b>{{ characterCount }}</b></span
+        >
+        <div class="progress-bar-container">
+          <div class="progress-bar" [style.width.%]="ProgressPercentage"></div>
+          <span>{{ ProgressPercentage }}%</span>
+        </div>
+      </div>
+      
+      <div class="actions">
+        <button 
+          class="grammar-btn" 
+          (click)="correctText()" 
+          [disabled]="!userText || userText.trim() === '' || isCheckingGrammar"
+          style="background-color: #8b5cf6; color: white; padding: 8px 16px; border-radius: 6px; border: none; cursor: pointer; margin-right: 5px;">
+          <span *ngIf="!isCheckingGrammar">✨ Check Grammar</span>
+          <span *ngIf="isCheckingGrammar">⏳ Checking...</span>
+        </button>
+
+        <button class="tips-toggle-btn" (click)="toggleTipsPanel()">
+          💡 {{ showTipsPanel ? "Hide Tips" : "Show Tips" }}
+        </button>
+        <button
+          class="draft-btn"
+          (click)="saveDraft()"
+          [disabled]="!userText.trim()"
+        >
+          📝 Save Draft
+        </button>
+        <button
+          class="save-btn"
+          (click)="saveWriting()"
+          [disabled]="!canSave()"
+          [class.saving]="isSaving"
+        >
+          <span *ngIf="!isSaving">💾 Save Writing</span>
+          <span *ngIf="isSaving">⏳ Saving...</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="message" *ngIf="saveMessage" [class]="messageType">
+      {{ saveMessage }}
+    </div>
+  </div>
+
+  <div class="history-toggle">
+    <button class="toggle-btn" (click)="toggleHistory()">
+      <span *ngIf="!showHistory">📜 View Writing History</span>
+      <span *ngIf="showHistory">✍️ Back to Writing</span>
+    </button>
+  </div>
+
+  <div
+    class="tips-panel-overlay"
+    *ngIf="showTipsPanel"
+    (click)="closeTipsPanel()"
+  >
+    <div class="tips-panel" (click)="$event.stopPropagation()">
+      <div class="tips-header">
+        <h3>Writing Assistant</h3>
+        <button class="close-btn" (click)="closeTipsPanel()">×</button>
+      </div>
+      <div class="tips-tabs">
+        <button
+          *ngFor="let tab of tipsTabs"
+          class="tab-btn"
+          [class.active]="activeTab === tab.id"
+          (click)="setActiveTab(tab.id)"
+          [disabled]="!hasContentForTab(tab.id)"
+        >
+          {{ tab.icon }} {{ tab.name }}
+          <span class="badge" *ngIf="getTabBadgeCount(tab.id) > 0">{{
+            getTabBadgeCount(tab.id)
+          }}</span>
+        </button>
+      </div>
+      <div class="tips-content">
+        <div *ngIf="activeTab === 'quick'">
+          <h4>🎯 Quick Tips for {{ currentPrompt?.type }}</h4>
+          <ul class="tips-list" *ngIf="hasContentForTab('quick'); else noTips">
+            <li *ngFor="let tip of currentPrompt?.tips">{{ tip }}</li>
+          </ul>
+        </div>
+        <div *ngIf="activeTab === 'linking'">
+          <h4>🔗 Linking Words</h4>
+          <div *ngIf="hasContentForTab('linking'); else noTips">
+            <div
+              *ngFor="let category of linkingWordCategories"
+              class="tip-category"
+            >
+              <h5>{{ category }}</h5>
+              <div class="word-tags">
+                <span
+                  *ngFor="let word of getLinkingWordsByCategory(category)"
+                  class="word-tag"
+                  [class]="'level-' + word.level.toLowerCase()"
+                  >{{ word.word }}</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="activeTab === 'structure'">
+          <h4>📚 Structure Templates</h4>
+          <div
+            class="structure-list"
+            *ngIf="hasContentForTab('structure'); else noTips"
+          >
+            <div
+              *ngFor="let template of currentTips.structureTemplates"
+              class="structure-template"
+              (click)="selectTemplate(template)"
+            >
+              <h5>{{ template.name }}</h5>
+              <ul>
+                <li *ngFor="let item of template.structure">{{ item }}</li>
+              </ul>
+              <span class="copy-hint">Click to copy</span>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="activeTab === 'vocabulary'">
+          <h4>📖 Vocabulary Suggestions</h4>
+          <ul
+            class="vocabulary-list"
+            *ngIf="hasContentForTab('vocabulary'); else noTips"
+          >
+            <li *ngFor="let word of currentTips.vocabularySuggestions">
+              <strong>{{ word.word }}</strong
+              >: {{ word.definition }}
+            </li>
+          </ul>
+        </div>
+        <div *ngIf="activeTab === 'patterns'">
+          <h4>✍️ Sentence Patterns</h4>
+          <ul
+            class="patterns-list"
+            *ngIf="hasContentForTab('patterns'); else noTips"
+          >
+            <li *ngFor="let pattern of currentTips.sentencePatterns">
+              <strong>{{ pattern.type }}:</strong> "{{ pattern.pattern }}"
+            </li>
+          </ul>
+        </div>
+        <ng-template #noTips>
+          <p class="no-content">
+            No tips available for this section and current prompt.
+          </p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+  <div class="history-section" *ngIf="showHistory">
+    <div class="history-header">
+      <h3>Writing History</h3>
+      <div class="history-stats">
+        <span class="stat-item">Total: {{ savedWritings.length }}</span>
+        <span class="stat-item">Completed: {{ getCompletedCount() }}</span>
+        <span class="stat-item">Drafts: {{ getDraftCount() }}</span>
+      </div>
+    </div>
+    <div class="history-filters">
+      <select
+        [(ngModel)]="historyFilter"
+        (change)="applyHistoryFilter()"
+        class="history-filter-select"
+      >
+        <option value="all">All Writings</option>
+        <option value="completed">Completed Only</option>
+        <option value="draft">Drafts Only</option>
+      </select>
+      <select
+        [(ngModel)]="historyLevelFilter"
+        (change)="applyHistoryFilter()"
+        class="history-filter-select"
+      >
+        <option value="">All Levels</option>
+        <option *ngFor="let level of getHistoryLevels()" [value]="level">
+          {{ level }}
+        </option>
+      </select>
+      <button
+        class="clear-all-btn"
+        (click)="clearAllHistory()"
+        *ngIf="savedWritings.length > 0"
+      >
+        🗑️ Clear All
+      </button>
+    </div>
+    <div
+      class="no-writings"
+      *ngIf="filteredWritings.length === 0 && savedWritings.length === 0"
+    >
+      <p>📝 No saved writings yet. Start writing and save your work!</p>
+    </div>
+    <div
+      class="no-results"
+      *ngIf="filteredWritings.length === 0 && savedWritings.length > 0"
+    >
+      <p>🔍 No writings match your current filters.</p>
+    </div>
+    <div class="writings-list" *ngIf="filteredWritings.length > 0">
+      <div
+        class="writing-card"
+        *ngFor="let writing of filteredWritings"
+        [class]="'status-' + writing.status"
+      >
+        <div class="card-header">
+          <div class="card-title">
+            <h4>{{ writing.promptTitle }}</h4>
+            <div class="card-badges">
+              <span
+                class="level-badge"
+                [class]="'level-' + writing.promptLevel.toLowerCase()"
+                >{{ writing.promptLevel }}</span
+              >
+              <span class="type-badge">{{ writing.promptType }}</span>
+              <span class="status-badge" [class]="'status-' + writing.status">
+                {{ writing.status === "completed" ? "✅" : "📝" }}
+                {{ writing.status }}
+              </span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="action-btn view-btn" (click)="viewWriting(writing)">
+              👁️ View
+            </button>
+            <button class="action-btn edit-btn" (click)="editWriting(writing)">
+              ✏️ Edit
+            </button>
+            <button
+              class="action-btn delete-btn"
+              (click)="deleteWriting(writing.id)"
+            >
+              🗑️ Delete
+            </button>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="writing-preview">{{ getPreview(writing.content) }}</div>
+          <div class="card-stats">
+            <span
+              >{{ writing.wordCount }} / {{ writing.targetWords }} words</span
+            >
+            <span>{{ writing.completionPercentage }}% complete</span>
+            <span>{{ formatDate(writing.updatedAt) }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

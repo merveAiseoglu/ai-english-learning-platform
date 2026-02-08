@@ -1,0 +1,478 @@
+<div class="listening-container">
+  <!-- Metin seçici -->
+  <div *ngIf="texts.length > 1" class="text-selector">
+    <label for="textSelect" class="text-selector-label">📚 Metin Seç:</label>
+    <select
+      #selectEl
+      (change)="onTextSelect(+selectEl.value)"
+      [disabled]="isLoading"
+      id="textSelect"
+      class="text-selector-dropdown"
+    >
+      <option *ngFor="let text of texts; let i = index" [value]="i">
+        {{ text.title }}
+      </option>
+    </select>
+  </div>
+
+  <div *ngIf="currentText" class="listening-exercise">
+    <!-- Başlık -->
+    <div class="header-section">
+      <h1 class="main-title">🎧 {{ currentText.title }}</h1>
+    </div>
+
+    <!-- Loading göstergesi -->
+    <div *ngIf="showLoading" class="loading-indicator">
+      <div class="loading-icon">⏳</div>
+      <span class="loading-text">Audio yükleniyor...</span>
+    </div>
+
+    <!-- Hata mesajı -->
+    <div *ngIf="showError" class="error-message">
+      <div class="error-icon">⚠️</div>
+      <span class="error-text">{{ audioError }}</span>
+    </div>
+
+    <!-- Ses kontrolleri -->
+    <div class="audio-controls">
+      <button
+        (click)="playAudio()"
+        [disabled]="!canPlay || isPlaying"
+        class="btn btn-play"
+        [class.playing]="isPlaying"
+        [class.disabled]="!canPlay || isPlaying"
+      >
+        <span *ngIf="!isPlaying && !showLoading">▶️ Play</span>
+        <span *ngIf="isPlaying">🎵 Oynatılıyor</span>
+        <span *ngIf="showLoading">⏳ Yükleniyor</span>
+      </button>
+
+      <button
+        (click)="pauseAudio()"
+        [disabled]="!canPlay || !isPlaying"
+        class="btn btn-pause"
+        [class.disabled]="!canPlay || !isPlaying"
+      >
+        ⏸ Pause
+      </button>
+
+      <button
+        (click)="restartAudio()"
+        [disabled]="!canPlay"
+        class="btn btn-restart"
+        [class.disabled]="!canPlay"
+      >
+        🔄 Restart
+      </button>
+    </div>
+
+    <!-- Hız kontrolü -->
+    <div class="speed-control">
+      <label class="speed-label">⚡ Oynatma Hızı:</label>
+      <div class="speed-buttons">
+        <button
+          *ngFor="let rate of availableRates"
+          (click)="changePlaybackRate(rate)"
+          class="speed-btn"
+          [class.active]="playbackRate === rate"
+        >
+          {{ rate }}x
+        </button>
+      </div>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="progress-section">
+      <div class="progress-time">
+        <span class="current-time">{{ formatTime(currentTime) }}</span>
+        <span class="duration-label">🎵 Audio Süresi</span>
+        <span class="total-time">{{ formatTime(duration) }}</span>
+      </div>
+
+      <div class="progress-bar-container" (click)="onProgressBarClick($event)">
+        <div class="progress-bar" [style.width.%]="getProgressPercentage()">
+          <div class="playhead"></div>
+        </div>
+      </div>
+
+      <div class="progress-percentage">
+        {{ getProgressPercentage() | number : "1.0-0" }}% tamamlandı
+      </div>
+    </div>
+
+    <!-- Audio durumu -->
+    <div *ngIf="canPlay && !showLoading && !showError" class="audio-status">
+      <span class="status-text" [class.playing]="isPlaying">
+        {{ isPlaying ? "🔊 Ses oynatılıyor" : "🎵 Ses hazır" }}
+      </span>
+    </div>
+  </div>
+
+  <!-- EGZERSİZ ALANI -->
+  <div *ngIf="currentText" class="exercise-area">
+    <!-- EGZERSİZ TÜRÜ SEÇİMİ -->
+    <div class="exercise-type-selector">
+      <h3 class="exercise-title">🎯 Egzersiz Türü Seçin</h3>
+      <div class="exercise-buttons">
+        <button
+          (click)="switchExerciseType('blanks')"
+          class="exercise-btn"
+          [class.active]="currentExerciseType === 'blanks'"
+        >
+          📝 Boşluk Doldurma
+        </button>
+
+        <button
+          (click)="switchExerciseType('multiple-choice')"
+          class="exercise-btn"
+          [class.active]="currentExerciseType === 'multiple-choice'"
+        >
+          🎯 Çoktan Seçmeli
+          <span class="question-count"
+            >({{ currentText?.multipleChoiceQuestions?.length || 0 }})</span
+          >
+        </button>
+
+        <button
+          (click)="switchExerciseType('true-false')"
+          class="exercise-btn"
+          [class.active]="currentExerciseType === 'true-false'"
+        >
+          ✅ Doğru/Yanlış
+          <span class="question-count"
+            >({{ currentText?.trueFalseQuestions?.length || 0 }})</span
+          >
+        </button>
+      </div>
+    </div>
+
+    <!-- 1. BOŞLUK DOLDURMA EGZERSİZİ -->
+    <div *ngIf="currentExerciseType === 'blanks'" class="blanks-exercise">
+      <div class="exercise-header">
+        <h3 class="exercise-section-title">📝 Boşluk Doldurma Egzersizi</h3>
+        <p class="exercise-description">
+          Dinlediğiniz kelimeleri boş alanlara yazın
+        </p>
+      </div>
+
+      <div
+        class="listening-text-container"
+        [class.disabled]="showLoading || showError"
+      >
+        <p class="listening-text">
+          <ng-container *ngFor="let word of currentWords; let i = index">
+            <ng-container *ngIf="blanksIndices.includes(i); else normalWord">
+              <input
+                type="text"
+                [(ngModel)]="userInputs[i]"
+                placeholder="..."
+                size="12"
+                class="word-input"
+                [class.correct]="
+                  checkResults &&
+                  checkResults[blanksIndices.indexOf(i)]?.includes('✔')
+                "
+                [class.incorrect]="
+                  checkResults &&
+                  checkResults[blanksIndices.indexOf(i)]?.includes('✘')
+                "
+              />
+            </ng-container>
+            <ng-template #normalWord>
+              <span class="normal-word">{{ word }}</span>
+            </ng-template>
+          </ng-container>
+        </p>
+      </div>
+
+      <!-- Boşluk doldurma kontrol butonu -->
+      <div class="check-section">
+        <button
+          (click)="checkResults = checkAnswers()"
+          [disabled]="showLoading || showError"
+          class="btn btn-check"
+        >
+          🔍 Boşlukları Kontrol Et
+        </button>
+
+        <button
+          *ngIf="checkResults"
+          (click)="checkResults = null; userInputs = {}"
+          class="btn btn-reset"
+        >
+          🔄 Sıfırla
+        </button>
+      </div>
+
+      <!-- Boşluk doldurma sonuçları -->
+      <div *ngIf="checkResults" class="results-section">
+        <h4 class="results-title">📊 Boşluk Doldurma Sonuçları</h4>
+        <div class="results-grid">
+          <div
+            *ngFor="let res of checkResults; let i = index"
+            class="result-item"
+            [class.correct]="res.includes('✔')"
+            [class.incorrect]="res.includes('✘')"
+          >
+            <span class="result-icon">{{
+              res.includes("✔") ? "✅" : "❌"
+            }}</span>
+            <strong>Boşluk {{ i + 1 }}:</strong> {{ res }}
+          </div>
+        </div>
+
+        <div class="score-card">
+          🏆 Boşluk Doldurma Skoru: {{ getCorrectAnswersCount() }} /
+          {{ checkResults.length }} ({{ getScorePercentage() }}%)
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. ÇOKTAN SEÇMELİ EGZERSİZİ -->
+    <div
+      *ngIf="currentExerciseType === 'multiple-choice'"
+      class="multiple-choice-exercise"
+    >
+      <div class="exercise-header">
+        <h3 class="exercise-section-title">🎯 Çoktan Seçmeli Sorular</h3>
+        <p class="exercise-description">Doğru seçeneği işaretleyin</p>
+      </div>
+
+      <div
+        *ngIf="
+          currentText?.multipleChoiceQuestions &&
+          currentText.multipleChoiceQuestions.length > 0
+        "
+      >
+        <div
+          *ngFor="
+            let question of currentText.multipleChoiceQuestions;
+            let qIndex = index
+          "
+          class="question-container mc-question"
+        >
+          <h4 class="question-title">
+            Soru {{ qIndex + 1 }}: {{ question.question }}
+          </h4>
+
+          <div class="options">
+            <div
+              *ngFor="let option of question.options; let optIndex = index"
+              class="option-item"
+            >
+              <label class="option-label">
+                <input
+                  type="radio"
+                  [name]="'mc_' + question.id"
+                  [value]="optIndex"
+                  [(ngModel)]="multipleChoiceAnswers[question.id]"
+                  class="option-radio"
+                />
+                <span class="option-text"
+                  >{{ getOptionLetter(optIndex) }}) {{ option }}</span
+                >
+              </label>
+            </div>
+          </div>
+
+          <!-- Sonuç göstergesi -->
+          <div
+            *ngIf="mcQuestionResults[question.id] !== undefined"
+            class="question-result"
+            [class.correct]="mcQuestionResults[question.id]"
+            [class.incorrect]="!mcQuestionResults[question.id]"
+          >
+            <strong class="result-status">
+              {{ mcQuestionResults[question.id] ? "✅ Doğru!" : "❌ Yanlış!" }}
+            </strong>
+            <div class="explanation">{{ question.explanation }}</div>
+          </div>
+        </div>
+
+        <!-- Çoktan seçmeli kontrol butonu -->
+        <div class="check-section">
+          <button
+            (click)="checkMultipleChoiceAnswers()"
+            class="btn btn-check-mc"
+          >
+            🎯 Çoktan Seçmeli Cevapları Kontrol Et
+          </button>
+        </div>
+      </div>
+
+      <div
+        *ngIf="
+          !currentText?.multipleChoiceQuestions ||
+          currentText.multipleChoiceQuestions.length === 0
+        "
+        class="no-content"
+      >
+        Bu metin için çoktan seçmeli soru bulunmamaktadır.
+      </div>
+    </div>
+
+    <!-- 3. DOĞRU/YANLIŞ EGZERSİZİ -->
+    <div
+      *ngIf="currentExerciseType === 'true-false'"
+      class="true-false-exercise"
+    >
+      <div class="exercise-header">
+        <h3 class="exercise-section-title">✅ Doğru/Yanlış Soruları</h3>
+        <p class="exercise-description">
+          İfadelerin doğru mu yanlış mı olduğunu belirleyin
+        </p>
+      </div>
+
+      <div
+        *ngIf="
+          currentText?.trueFalseQuestions &&
+          currentText.trueFalseQuestions.length > 0
+        "
+      >
+        <div
+          *ngFor="
+            let question of currentText.trueFalseQuestions;
+            let qIndex = index
+          "
+          class="question-container tf-question"
+        >
+          <h4 class="question-title">
+            İfade {{ qIndex + 1 }}: {{ question.statement }}
+          </h4>
+
+          <div class="tf-options">
+            <label class="tf-option true-option">
+              <input
+                type="radio"
+                [name]="'tf_' + question.id"
+                [value]="true"
+                [(ngModel)]="trueFalseAnswers[question.id]"
+                class="tf-radio"
+              />
+              <span class="tf-text">✅ DOĞRU</span>
+            </label>
+
+            <label class="tf-option false-option">
+              <input
+                type="radio"
+                [name]="'tf_' + question.id"
+                [value]="false"
+                [(ngModel)]="trueFalseAnswers[question.id]"
+                class="tf-radio"
+              />
+              <span class="tf-text">❌ YANLIŞ</span>
+            </label>
+          </div>
+
+          <!-- Sonuç göstergesi -->
+          <div
+            *ngIf="tfQuestionResults[question.id] !== undefined"
+            class="question-result"
+            [class.correct]="tfQuestionResults[question.id]"
+            [class.incorrect]="!tfQuestionResults[question.id]"
+          >
+            <strong class="result-status">
+              {{ tfQuestionResults[question.id] ? "✅ Doğru!" : "❌ Yanlış!" }}
+            </strong>
+            <div class="explanation">{{ question.explanation }}</div>
+          </div>
+        </div>
+
+        <!-- Doğru/Yanlış kontrol butonu -->
+        <div class="check-section">
+          <button (click)="checkTrueFalseAnswers()" class="btn btn-check-tf">
+            ✅ Doğru/Yanlış Cevapları Kontrol Et
+          </button>
+        </div>
+      </div>
+
+      <div
+        *ngIf="
+          !currentText?.trueFalseQuestions ||
+          currentText.trueFalseQuestions.length === 0
+        "
+        class="no-content"
+      >
+        Bu metin için doğru/yanlış sorusu bulunmamaktadır.
+      </div>
+    </div>
+
+    <!-- GENEL SKOR ÖZETİ -->
+    <div *ngIf="hasAnyResults()" class="overall-score">
+      <h2 class="overall-title">🏆 GENEL BAŞARI DURUMUNUZ</h2>
+
+      <div class="score-cards">
+        <!-- Boşluk Doldurma Skoru -->
+        <div *ngIf="checkResults" class="score-card-item">
+          <div class="score-icon">📝</div>
+          <div class="score-label">Boşluk Doldurma</div>
+          <div class="score-value">
+            {{ getCorrectAnswersCount() }} / {{ checkResults.length }}
+          </div>
+        </div>
+
+        <!-- Çoktan Seçmeli Skoru -->
+        <div *ngIf="hasMCResults()" class="score-card-item">
+          <div class="score-icon">🎯</div>
+          <div class="score-label">Çoktan Seçmeli</div>
+          <div class="score-value">
+            {{ getMCCorrectCount() }} /
+            {{ currentText?.multipleChoiceQuestions?.length || 0 }}
+          </div>
+        </div>
+
+        <!-- Doğru/Yanlış Skoru -->
+        <div *ngIf="hasTFResults()" class="score-card-item">
+          <div class="score-icon">✅</div>
+          <div class="score-label">Doğru/Yanlış</div>
+          <div class="score-value">
+            {{ getTFCorrectCount() }} /
+            {{ currentText?.trueFalseQuestions?.length || 0 }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Toplam Skor -->
+      <div class="total-score">
+        <div class="total-label">TOPLAM BAŞARI ORANI</div>
+        <div class="total-value">
+          {{ getOverallScore().correct }} / {{ getOverallScore().total }}
+          <span class="total-percentage"
+            >({{ getOverallScore().percentage }}%)</span
+          >
+        </div>
+
+        <!-- Başarı durumu mesajı -->
+        <div class="success-message">
+          <span *ngIf="getOverallScore().percentage >= 90" class="excellent"
+            >🌟 Mükemmel! Harika iş çıkardınız!</span
+          >
+          <span
+            *ngIf="
+              getOverallScore().percentage >= 70 &&
+              getOverallScore().percentage < 90
+            "
+            class="good"
+            >👍 İyi! Başarıyla tamamladınız!</span
+          >
+          <span
+            *ngIf="
+              getOverallScore().percentage >= 50 &&
+              getOverallScore().percentage < 70
+            "
+            class="fair"
+            >💪 Fena değil! Biraz daha pratik yapabilirsiniz!</span
+          >
+          <span *ngIf="getOverallScore().percentage < 50" class="needs-work"
+            >📚 Tekrar dinleyip pratik yapmanızı öneririz!</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hiç metin yoksa -->
+  <div *ngIf="texts.length === 0" class="no-content">
+    <p>Metinler yükleniyor...</p>
+  </div>
+</div>

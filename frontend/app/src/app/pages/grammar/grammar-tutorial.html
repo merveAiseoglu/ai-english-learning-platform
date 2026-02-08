@@ -1,0 +1,368 @@
+<!-- grammar-tutorial.component.html -->
+<div class="grammar-tutorial">
+  <!-- Header -->
+  <header class="tutorial-header">
+    <div class="header-content">
+      <h1>🎓 Grammar Tutorial</h1>
+      <p>İngilizce gramer öğrenmenin en etkili yolu</p>
+
+      <!-- Breadcrumb Navigation -->
+      <nav class="breadcrumb" *ngIf="selectedLevelId || selectedTopicId">
+        <button class="breadcrumb-item" (click)="resetToLevelSelection()">
+          <i class="icon">🏠</i>
+          Ana Sayfa
+        </button>
+
+        <span class="separator" *ngIf="selectedLevelId">></span>
+
+        <button
+          *ngIf="selectedLevelId"
+          class="breadcrumb-item"
+          [class.active]="!selectedTopicId"
+          (click)="resetToTopicSelection()"
+        >
+          <i class="icon">📚</i>
+          Konular
+        </button>
+
+        <span class="separator" *ngIf="selectedTopicId">></span>
+
+        <span *ngIf="selectedTopicId" class="breadcrumb-item active">
+          <i class="icon">📖</i>
+          Konu Detayı
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="tutorial-main">
+    <!-- Progress Indicator -->
+    <div class="progress-indicator">
+      <div
+        class="progress-step"
+        [class.completed]="selectedLevelId"
+        [class.active]="!selectedLevelId"
+      >
+        <div class="step-number">1</div>
+        <div class="step-label">Seviye Seç</div>
+      </div>
+
+      <div class="progress-line" [class.completed]="selectedLevelId"></div>
+
+      <div
+        class="progress-step"
+        [class.completed]="selectedTopicId"
+        [class.active]="selectedLevelId && !selectedTopicId"
+      >
+        <div class="step-number">2</div>
+        <div class="step-label">Konu Seç</div>
+      </div>
+
+      <div class="progress-line" [class.completed]="selectedTopicId"></div>
+
+      <div class="progress-step" [class.active]="selectedTopicId">
+        <div class="step-number">3</div>
+        <div class="step-label">Öğren</div>
+      </div>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="content-sections">
+      <!-- Level Selection -->
+      <section class="content-section" [class.hidden]="selectedLevelId">
+        <app-level-selector (levelSelected)="onLevelSelected($event)">
+        </app-level-selector>
+      </section>
+
+      <!-- Topic List -->
+      <section
+        class="content-section"
+        [class.hidden]="!selectedLevelId || selectedTopicId"
+      >
+        <app-topic-list
+          [selectedLevelId]="selectedLevelId"
+          (topicSelected)="onTopicSelected($event)"
+        >
+        </app-topic-list>
+      </section>
+
+      <!-- Topic Detail -->
+      <section class="content-section" [class.hidden]="!selectedTopicId">
+        <app-topic-detail [selectedTopicId]="selectedTopicId">
+        </app-topic-detail>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="tutorial-footer">
+    <div class="footer-content">
+      <p>
+        💡 İpucu: Her konuyu tamamladıktan sonra egzersizler ile pratik
+        yapabilirsiniz!
+      </p>
+    </div>
+  </footer>
+</div>
+
+<style>
+  .grammar-tutorial {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Header */
+  .tutorial-header {
+    background: white;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .tutorial-header h1 {
+    margin: 0 0 8px 0;
+    color: #2c3e50;
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  .tutorial-header p {
+    margin: 0 0 20px 0;
+    color: #7f8c8d;
+    font-size: 16px;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb-item {
+    background: none;
+    border: none;
+    color: #3498db;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .breadcrumb-item:hover {
+    background: #ebf3fd;
+    color: #2980b9;
+  }
+
+  .breadcrumb-item.active {
+    background: #3498db;
+    color: white;
+    cursor: default;
+  }
+
+  .separator {
+    color: #bdc3c7;
+    font-weight: bold;
+  }
+
+  /* Progress Indicator */
+  .progress-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+
+  .progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #bdc3c7;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+
+  .step-label {
+    font-size: 12px;
+    color: #7f8c8d;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .progress-step.active .step-number {
+    background: #3498db;
+    transform: scale(1.1);
+  }
+
+  .progress-step.completed .step-number {
+    background: #27ae60;
+  }
+
+  .progress-step.active .step-label,
+  .progress-step.completed .step-label {
+    color: #2c3e50;
+    font-weight: 600;
+  }
+
+  .progress-line {
+    flex: 1;
+    height: 2px;
+    background: #bdc3c7;
+    margin: 0 20px;
+    transition: all 0.3s ease;
+  }
+
+  .progress-line.completed {
+    background: #27ae60;
+  }
+
+  /* Main Content */
+  .tutorial-main {
+    flex: 1;
+    padding: 20px 0;
+  }
+
+  .content-sections {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .content-section {
+    transition: all 0.3s ease;
+  }
+
+  .content-section.hidden {
+    display: none;
+  }
+
+  /* Footer */
+  .tutorial-footer {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: auto;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .tutorial-footer p {
+    margin: 0;
+    color: #7f8c8d;
+    font-size: 14px;
+    font-style: italic;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .tutorial-header h1 {
+      font-size: 28px;
+    }
+
+    .tutorial-header p {
+      font-size: 14px;
+    }
+
+    .breadcrumb {
+      gap: 5px;
+    }
+
+    .breadcrumb-item {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+
+    .progress-indicator {
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+
+    .step-number {
+      width: 35px;
+      height: 35px;
+      font-size: 14px;
+    }
+
+    .step-label {
+      font-size: 10px;
+    }
+
+    .progress-line {
+      margin: 0 10px;
+    }
+
+    .tutorial-main {
+      padding: 15px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .progress-indicator {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .progress-line {
+      width: 2px;
+      height: 20px;
+      margin: 0;
+    }
+
+    .breadcrumb {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+
+  /* Animation for smooth transitions */
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .content-section {
+    animation: slideInUp 0.5s ease-out;
+  }
+</style>

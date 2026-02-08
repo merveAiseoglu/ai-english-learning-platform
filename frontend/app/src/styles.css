@@ -1,0 +1,83 @@
+/* You can add global styles to this file, and also import other style files */
+/* Seviye seçme alanı */
+app-level-select {
+  background-color: #f9f9f9;
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+app-level-select h2 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+app-level-select select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  min-width: 160px;
+}
+
+app-level-select button {
+  margin-left: 15px;
+  padding: 8px 20px;
+  font-size: 16px;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+app-level-select button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+app-level-select button:hover:not(:disabled) {
+  background-color: #1a2733;
+}
+
+/* Metin kartları */
+.text-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  border-left: 5px solid #2c3e50;
+}
+
+.text-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.text-card p {
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+  font-size: 16px;
+  color: #444;
+}
+
+.text-card small {
+  color: #888;
+  font-style: italic;
+}
+
+/* Genel sayfa düzeni */
+body, html {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+}
+

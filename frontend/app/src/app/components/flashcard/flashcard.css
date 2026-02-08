@@ -1,0 +1,240 @@
+/* ========================
+   CONTAINER & LAYOUT
+   ======================== */
+.flashcard-container {
+  width: 100%;
+  max-width: 600px; /* Genişliği biraz artırdım, daha ferah olsun */
+  margin: 0 auto;
+  padding: 10px;
+  /* Kayanın sebebi bazen overflow olabilir, bunu gizleyelim */
+  box-sizing: border-box;
+}
+
+/* ========================
+   3D FLIP CARD
+   ======================== */
+.flashcard {
+  width: 100%;
+  height: 320px; /* Sabit yükseklik, sayfanın zıplamasını engeller */
+  position: relative;
+  perspective: 1000px;
+  cursor: pointer;
+  margin-bottom: 32px;
+}
+
+/* Flip Trigger Classes */
+.flashcard.flipped .flashcard-front {
+  transform: rotateY(-180deg);
+}
+
+.flashcard.flipped .flashcard-back {
+  transform: rotateY(0deg);
+}
+
+/* Ortak Yüz Özellikleri */
+.flashcard-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Daha yumuşak gölge */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-size: cover;
+  box-sizing: border-box; /* Padding'in taşmasını engeller */
+}
+
+/* ========================
+   FRONT FACE (Ön Yüz)
+   ======================== */
+.flashcard-front {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); /* Vocabulary ile uyumlu mor */
+  color: white;
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.flashcard-front h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  letter-spacing: -1px;
+}
+
+.flashcard-front .pos {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.flashcard-front .meaning {
+  font-size: 1.4rem;
+  font-weight: 500;
+  opacity: 0.95;
+  line-height: 1.4;
+  max-width: 90%;
+}
+
+/* ========================
+   BACK FACE (Arka Yüz)
+   ======================== */
+.flashcard-back {
+  background: linear-gradient(135deg, #1f2937 0%, #374151 100%); /* Koyu gri, modern görünüm */
+  color: white;
+  transform: rotateY(180deg);
+  align-items: flex-start; /* Sola hizalı */
+  text-align: left;
+  padding: 30px;
+}
+
+.flashcard-back h3 {
+  width: 100%;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #a5b4fc;
+}
+
+.flashcard-back p {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  line-height: 1.6;
+  width: 100%;
+}
+
+.flashcard-back em {
+  font-style: normal;
+  font-weight: 700;
+  color: #a5b4fc;
+  margin-right: 8px;
+}
+
+/* ========================
+   CONTROLS & BUTTONS
+   ======================== */
+.flashcard-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+  flex-wrap: wrap; /* Mobilde taşarsa aşağı geçsin */
+}
+
+/* Butonları Vocabulary CSS ile uyumlu hale getirdim */
+.flashcard-controls .btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 110px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.flashcard-controls .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.flashcard-controls .btn:active {
+  transform: translateY(0);
+}
+
+.btn-success { background: #10b981; }
+.btn-danger { background: #ef4444; }
+.btn-primary { background: #6366f1; }
+
+/* ========================
+   SOUND BUTTON
+   ======================== */
+.btn-sound {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.btn-sound:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+/* ========================
+   PROGRESS TEXT
+   ======================== */
+.progress {
+  text-align: center;
+  color: #6b7280; /* Gri tonu vocabulary ile aynı */
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+.loading-message {
+  text-align: center;
+  color: #6b7280;
+  font-size: 1.1rem;
+  padding: 40px;
+}
+
+/* ========================
+   RESPONSIVE DESIGN
+   ======================== */
+@media (max-width: 600px) {
+  .flashcard {
+    height: 280px; /* Mobilde kart boyunu biraz kıstım */
+  }
+  
+  .flashcard-front h2 {
+    font-size: 2.2rem;
+  }
+  
+  .flashcard-controls .btn {
+    flex: 1; /* Mobilde butonlar tam genişlik kaplasın */
+    padding: 12px;
+    font-size: 14px;
+    min-width: auto;
+  }
+  
+  .flashcard-back {
+    padding: 20px;
+  }
+}

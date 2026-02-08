@@ -1,0 +1,15 @@
+/* Application TypeScript Configuration */
+/* Extends base tsconfig.json for application-specific settings */
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": []
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/**/*.spec.ts"
+  ]
+}

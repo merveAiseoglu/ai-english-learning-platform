@@ -1,0 +1,102 @@
+/* Reset ve temel stiller */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f7fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Stili */
+.app-header {
+  background: linear-gradient(135deg, #68ea66 0%, #5073c6 100%);
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.app-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  background-color: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+
+.main-nav a.active {
+  background-color: rgba(255,255,255,0.3);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Ana İçerik */
+.main-content {
+  min-height: calc(100vh - 140px);
+  padding: 2rem 0;
+}
+
+/* Footer */
+.app-footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: auto;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+  .app-header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .main-nav {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+  
+  .main-nav a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+}

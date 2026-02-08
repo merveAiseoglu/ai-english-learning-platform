@@ -1,0 +1,190 @@
+[
+  {
+  "id": 1,
+  "title": "A Day at the Park",
+  "audioFile": "a_day_at_the_park",
+  "transcript": "Yesterday, I went to the park with my friends. The weather was perfect — sunny but not too hot. We brought a picnic blanket and some snacks. First, we played frisbee for an hour, running around and laughing a lot. After that, we sat under a big oak tree and enjoyed our sandwiches and cold drinks. Some children were playing nearby, and their joyful noise made the atmosphere lively. We also saw a few ducks swimming in the pond and fed them some breadcrumbs. Later, we took a leisurely walk around the park, admiring the colorful flowers and tall trees. It was a relaxing and fun day, and I can't wait to go back next weekend.",
+  "multipleChoiceQuestions": [
+    {
+      "id": 1,
+      "question": "How was the weather described?",
+      "options": ["Rainy and cold", "Perfect - sunny but not too hot", "Very hot and humid", "Cloudy and windy"],
+      "correctAnswer": 1,
+      "explanation": "The speaker described the weather as 'perfect — sunny but not too hot.'"
+    },
+    {
+      "id": 2,
+      "question": "What did they do first at the park?",
+      "options": ["Had lunch", "Played frisbee", "Fed the ducks", "Took a walk"],
+      "correctAnswer": 1,
+      "explanation": "The speaker said 'First, we played frisbee for an hour.'"
+    },
+    {
+      "id": 3,
+      "question": "Where did they sit to eat?",
+      "options": ["On a bench", "Under a big oak tree", "By the pond", "On the grass"],
+      "correctAnswer": 1,
+      "explanation": "They sat under a big oak tree and enjoyed their sandwiches."
+    },
+    {
+      "id": 4,
+      "question": "When does the speaker want to return to the park?",
+      "options": ["Tomorrow", "Next month", "Next weekend", "Next year"],
+      "correctAnswer": 2,
+      "explanation": "The speaker said 'I can't wait to go back next weekend.'"
+    }
+  ],
+  "trueFalseQuestions": [
+    {
+      "id": 1,
+      "statement": "The speaker went to the park alone.",
+      "correctAnswer": false,
+      "explanation": "The speaker went with friends, as stated: 'I went to the park with my friends.'"
+    },
+    {
+      "id": 2,
+      "statement": "They played frisbee for an hour.",
+      "correctAnswer": true,
+      "explanation": "The text clearly states 'we played frisbee for an hour.'"
+    },
+    {
+      "id": 3,
+      "statement": "They fed breadcrumbs to the fish.",
+      "correctAnswer": false,
+      "explanation": "They fed breadcrumbs to ducks, not fish: 'We also saw a few ducks swimming in the pond and fed them some breadcrumbs.'"
+    },
+    {
+      "id": 4,
+      "statement": "The children's noise made the atmosphere lively.",
+      "correctAnswer": true,
+      "explanation": "The text says 'their joyful noise made the atmosphere lively.'"
+    }
+  ]
+},
+{
+ "id": 2,
+ "title": "Learning a New Skill",
+ "audioFile": "learning_a_new_skill",
+ "transcript": "Learning something new can be both exciting and challenging. Recently, I decided to learn how to play the guitar. At first, it was difficult to coordinate my fingers and make the right chords, but I practiced every day for at least thirty minutes. Watching tutorial videos and reading beginner's guides helped me understand the basics. Gradually, I started recognizing the different notes and playing simple songs. Although progress was slow, the satisfaction of improving kept me motivated. Now, after a few months, I can play a few songs comfortably, and I enjoy the process of learning. This experience taught me the importance of patience, persistence, and consistent practice.",
+ "multipleChoiceQuestions": [
+   {
+     "id": 5,
+     "question": "What instrument did the speaker decide to learn?",
+     "options": ["Piano", "Violin", "Guitar", "Drums"],
+     "correctAnswer": 2,
+     "explanation": "The speaker clearly states 'I decided to learn how to play the guitar.'"
+   },
+   {
+     "id": 6,
+     "question": "How long did the speaker practice each day?",
+     "options": ["15 minutes", "At least 30 minutes", "One hour", "Two hours"],
+     "correctAnswer": 1,
+     "explanation": "The speaker practiced 'every day for at least thirty minutes.'"
+   },
+   {
+     "id": 7,
+     "question": "What helped the speaker understand the basics?",
+     "options": ["Private lessons", "Tutorial videos and beginner's guides", "Playing with friends", "Reading music books"],
+     "correctAnswer": 1,
+     "explanation": "Watching tutorial videos and reading beginner's guides helped understand the basics."
+   },
+   {
+     "id": 8,
+     "question": "What three things did this experience teach the speaker?",
+     "options": ["Speed, accuracy, and technique", "Patience, persistence, and consistent practice", "Rhythm, melody, and harmony", "Creativity, expression, and style"],
+     "correctAnswer": 1,
+     "explanation": "The experience taught 'the importance of patience, persistence, and consistent practice.'"
+   }
+ ],
+ "trueFalseQuestions": [
+   {
+     "id": 5,
+     "statement": "Learning guitar was easy from the beginning.",
+     "correctAnswer": false,
+     "explanation": "The speaker said 'At first, it was difficult to coordinate my fingers and make the right chords.'"
+   },
+   {
+     "id": 6,
+     "statement": "The speaker practiced every day.",
+     "correctAnswer": true,
+     "explanation": "The text states 'I practiced every day for at least thirty minutes.'"
+   },
+   {
+     "id": 7,
+     "statement": "Progress was very fast.",
+     "correctAnswer": false,
+     "explanation": "The speaker mentioned 'Although progress was slow.'"
+   },
+   {
+     "id": 8,
+     "statement": "After a few months, the speaker can play some songs comfortably.",
+     "correctAnswer": true,
+     "explanation": "The text says 'Now, after a few months, I can play a few songs comfortably.'"
+   }
+ ]
+},
+{
+ "id": 3,
+ "title": "The Importance of Healthy Eating",
+ "audioFile": "the_importance_of_healthy_eating",
+ "transcript": "Eating healthy food is essential for maintaining good health and energy throughout the day. A balanced diet includes a variety of fruits, vegetables, whole grains, and proteins. I try to avoid processed foods and sugary snacks because they can cause fatigue and other health issues. Drinking plenty of water is also important to stay hydrated. Preparing meals at home allows me to control the ingredients and portions better. When I eat well, I notice improvements in my mood and concentration. Additionally, healthy eating can reduce the risk of many diseases. Although sometimes it's tempting to choose fast food for convenience, making mindful choices leads to a healthier and happier life.",
+ "multipleChoiceQuestions": [
+   {
+     "id": 9,
+     "question": "What does a balanced diet include?",
+     "options": ["Only fruits and vegetables", "Fruits, vegetables, whole grains, and proteins", "Just meat and dairy", "Processed foods and snacks"],
+     "correctAnswer": 1,
+     "explanation": "A balanced diet includes 'a variety of fruits, vegetables, whole grains, and proteins.'"
+   },
+   {
+     "id": 10,
+     "question": "Why does the speaker avoid processed foods and sugary snacks?",
+     "options": ["They are expensive", "They cause fatigue and health issues", "They taste bad", "They are hard to find"],
+     "correctAnswer": 1,
+     "explanation": "The speaker avoids them 'because they can cause fatigue and other health issues.'"
+   },
+   {
+     "id": 11,
+     "question": "What improvements does the speaker notice when eating well?",
+     "options": ["Better sleep", "Weight loss", "Improvements in mood and concentration", "Increased appetite"],
+     "correctAnswer": 2,
+     "explanation": "The speaker notices 'improvements in my mood and concentration.'"
+   },
+   {
+     "id": 12,
+     "question": "What does making mindful food choices lead to?",
+     "options": ["More expensive meals", "A healthier and happier life", "Weight gain", "Cooking difficulties"],
+     "correctAnswer": 1,
+     "explanation": "Making mindful choices 'leads to a healthier and happier life.'"
+   }
+ ],
+ "trueFalseQuestions": [
+   {
+     "id": 9,
+     "statement": "Drinking water is not important for health.",
+     "correctAnswer": false,
+     "explanation": "The speaker says 'Drinking plenty of water is also important to stay hydrated.'"
+   },
+   {
+     "id": 10,
+     "statement": "Preparing meals at home allows better control of ingredients and portions.",
+     "correctAnswer": true,
+     "explanation": "The text states 'Preparing meals at home allows me to control the ingredients and portions better.'"
+   },
+   {
+     "id": 11,
+     "statement": "Healthy eating can reduce the risk of diseases.",
+     "correctAnswer": true,
+     "explanation": "The speaker mentions 'healthy eating can reduce the risk of many diseases.'"
+   },
+   {
+     "id": 12,
+     "statement": "Fast food is never tempting for the speaker.",
+     "correctAnswer": false,
+     "explanation": "The speaker admits 'sometimes it's tempting to choose fast food for convenience.'"
+   }
+ ]
+}
+    
+  
+]

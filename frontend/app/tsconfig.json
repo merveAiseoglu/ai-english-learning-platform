@@ -1,0 +1,44 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    /* Base Configuration */
+    "baseUrl": "./",   /* <-- BU SATIR GERİ GELDİ, ÇÜNKÜ 'src/...' importları için şart */
+    "rootDir": "./src",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    
+    /* Language & Module Settings */
+    "target": "es2022",
+    "module": "es2022",
+    "lib": ["es2022", "dom"],
+    "moduleResolution": "bundler",
+    
+    /* Advanced Options */
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    
+    /* Type Checking */
+    "typeRoots": ["node_modules/@types"],
+    
+    /* ignoreDeprecations satırını tamamen siliyoruz veya "5.0" yapıyoruz. 
+       Şimdilik siliyoruz ki "TS5103" hatası almayalım. */
+
+    /* Path Mapping */
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@assets/*": ["src/assets/*"],
+      "@environments/*": ["src/environments/*"]
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

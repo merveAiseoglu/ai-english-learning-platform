@@ -1,0 +1,398 @@
+<!-- Vocabulary Page Template -->
+<!-- Multi-tab interface: Learn, Quiz, Search, Review -->
+
+<div class="vocabulary-container">
+  
+  <!-- ========================
+       HEADER WITH TABS
+       ======================== -->
+  <div class="vocabulary-header">
+    <h1>Kelime Öğrenme</h1>
+
+    <!-- Tab Buttons -->
+    <div class="tab-buttons">
+      <button
+        class="tab-button"
+        [class.active]="activeTab === 'learn'"
+        (click)="switchTab('learn')"
+      >
+        <span class="icon">📚</span> Öğren
+      </button>
+      <button
+        class="tab-button"
+        [class.active]="activeTab === 'quiz'"
+        (click)="switchTab('quiz')"
+      >
+        <span class="icon">🧠</span> Quiz
+      </button>
+      <button
+        class="tab-button"
+        [class.active]="activeTab === 'search'"
+        (click)="switchTab('search')"
+      >
+        <span class="icon">🔍</span> Ara
+      </button>
+      <button
+        class="tab-button review-button"
+        [class.active]="activeTab === 'review'"
+        (click)="switchTab('review')"
+      >
+        <span class="icon">📋</span> Tekrar
+      </button>
+    </div>
+  </div>
+
+  <!-- Header Statistics -->
+  <div class="header-stats">
+    <div class="stat-item">
+      <div class="stat-number">{{ statistics?.totalWords || 0 }}</div>
+      <div class="stat-label">Kelime</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">{{ dailyStats.dailyStreak }}</div>
+      <div class="stat-label">Gün Serisi</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">{{ dailyStats.totalPoints }}</div>
+      <div class="stat-label">Puan</div>
+    </div>
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="progress-container">
+    <div class="progress-bar">
+      <div
+        class="progress-fill"
+        [style.width.%]="
+          statistics?.totalWords && statistics.totalWords > 0
+            ? (statistics.learnedWords / statistics.totalWords) * 100
+            : 0
+        "
+      ></div>
+    </div>
+  </div>
+
+  <!-- ========================
+       LEARN TAB
+       ======================== -->
+  @if (activeTab === 'learn') {
+  <div class="learn-container">
+    <!-- Flashcard Component -->
+    <div class="flashcard-top" *ngIf="!loading && !error">
+      <app-flashcard />
+    </div>
+
+    <!-- Detailed Statistics Card -->
+    <div class="stats-card" *ngIf="statistics && !loading">
+      <div class="stat-row">
+        <div class="stat-item-detail">
+          <span class="stat-icon">📖</span>
+          <div class="stat-info">
+            <div class="stat-value">{{ statistics?.totalWords || 0 }}</div>
+            <div class="stat-desc">Toplam Kelime</div>
+          </div>
+        </div>
+        <div class="stat-item-detail">
+          <span class="stat-icon">✅</span>
+          <div class="stat-info">
+            <div class="stat-value">{{ statistics?.learnedWords || 0 }}</div>
+            <div class="stat-desc">Öğrenilen</div>
+          </div>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-item-detail">
+          <span class="stat-icon">🎯</span>
+          <div class="stat-info">
+            <div class="stat-value">{{ statistics?.masteredWords || 0 }}</div>
+            <div class="stat-desc">Ustalaşılan</div>
+          </div>
+        </div>
+        <div class="stat-item-detail">
+          <span class="stat-icon">🔄</span>
+          <div class="stat-info">
+            <div class="stat-value">{{ statistics?.wordsToReview || 0 }}</div>
+            <div class="stat-desc">Tekrar Gereken</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+
+  <!-- ========================
+       QUIZ TAB
+       ======================== -->
+  @if (activeTab === 'quiz') {
+  <div class="enhanced-quiz-container">
+    
+    <!-- Quiz Start Screen -->
+    <div class="quiz-start-screen" *ngIf="!quizStarted && !quizCompleted">
+      <div class="quiz-welcome">
+        <div class="quiz-icon">🧠</div>
+        <h2>Vocabulary Quiz</h2>
+        <p class="quiz-description">
+          {{ words.length }} kelimeden rastgele seçilecek sorularla bilginizi test edin!
+        </p>
+
+        <div class="quiz-info">
+          <div class="info-item">
+            <span class="info-icon">📊</span>
+            <span>{{ totalQuestions }} Soru</span>
+          </div>
+          <div class="info-item">
+            <span class="info-icon">⏱️</span>
+            <span>Süre Limiti Yok</span>
+          </div>
+          <div class="info-item">
+            <span class="info-icon">🎯</span>
+            <span>4 Seçenekli</span>
+          </div>
+        </div>
+
+        <div class="quiz-start-actions">
+          <button
+            class="btn btn-primary btn-large"
+            (click)="initializeQuiz()"
+            [disabled]="words.length < 4"
+          >
+            <span class="btn-icon">🚀</span>
+            Quiz'i Başlat
+          </button>
+
+          <p class="quiz-requirement" *ngIf="words.length < 4">
+            Quiz için en az 4 kelime gereklidir
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz Progress Header -->
+    <div class="quiz-progress-header" *ngIf="quizStarted && !quizCompleted">
+      <div class="quiz-progress-info">
+        <div class="progress-text">
+          <span class="current-question">{{ quizStats.currentQuestion }}</span>
+          <span class="question-separator">/</span>
+          <span class="total-questions">{{ quizStats.totalQuestions }}</span>
+        </div>
+        <div class="progress-score">
+          <span class="score-icon">🎯</span>
+          <span>{{ quizStats.score }}/{{ quizStats.totalQuestions }}</span>
+        </div>
+      </div>
+
+      <div class="quiz-progress-bar">
+        <div class="progress-track">
+          <div
+            class="progress-fill"
+            [style.width.%]="getProgressPercentage()"
+            [class.animating]="questionAnimating"
+          ></div>
+        </div>
+        <div class="progress-percentage">
+          {{ getProgressPercentage() | number : "1.0-0" }}%
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz Question Card -->
+    <div
+      class="quiz-question-card"
+      *ngIf="quizStarted && !quizCompleted && currentWord"
+      [class.animating]="questionAnimating"
+    >
+      <div class="question-header">
+        <div class="word-display">
+          <h3 class="quiz-word">{{ currentWord.word }}</h3>
+          <span class="word-pos" *ngIf="currentWord.pos">{{ currentWord.pos }}</span>
+        </div>
+        <div class="question-text">
+          <p>Bu kelimenin Türkçe karşılığı nedir?</p>
+        </div>
+      </div>
+
+      <!-- Answer Options -->
+      <div class="quiz-options-container">
+        <button
+          *ngFor="let option of options; let i = index; trackBy: trackByOption"
+          class="quiz-option"
+          [class.selected]="selectedAnswer === option && !isAnswered"
+          [class.correct]="isAnswered && option === correctAnswer"
+          [class.incorrect]="isAnswered && selectedAnswer === option && option !== correctAnswer"
+          [class.disabled]="isAnswered"
+          (click)="selectAnswer(option)"
+          [disabled]="isAnswered || questionAnimating"
+        >
+          <span class="option-letter">{{ ["A", "B", "C", "D"][i] }}</span>
+          <span class="option-text">{{ option }}</span>
+
+          <!-- Result Icons -->
+          <span class="option-result" *ngIf="isAnswered">
+            <span *ngIf="option === correctAnswer" class="correct-icon">✓</span>
+            <span *ngIf="selectedAnswer === option && option !== correctAnswer" class="incorrect-icon">✗</span>
+          </span>
+        </button>
+      </div>
+
+      <!-- Feedback Message -->
+      <div
+        class="quiz-feedback"
+        *ngIf="showFeedback && quizResult"
+        [class.show]="showFeedback"
+        [class.success]="quizResult.type === 'success'"
+        [class.error]="quizResult.type === 'error'"
+      >
+        <div class="feedback-content">
+          <div class="feedback-icon">
+            {{ quizResult.isCorrect ? "🎉" : "😢" }}
+          </div>
+          <div class="feedback-message">
+            {{ quizResult.message }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Next Question Button -->
+      <div class="quiz-actions" *ngIf="isAnswered">
+        <button class="btn btn-primary btn-next" (click)="nextQuestion()">
+          <span *ngIf="currentWordIndex + 1 < quizWords.length">Sonraki Soru</span>
+          <span *ngIf="currentWordIndex + 1 >= quizWords.length">Sonuçları Gör</span>
+          <span class="btn-arrow">→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Quiz Results Screen -->
+    <div class="quiz-results-screen" *ngIf="quizCompleted" [class.animating]="resultAnimating">
+      <div class="results-header">
+        <div class="results-icon">
+          {{ quizStats.percentage >= 80 ? "🏆" : quizStats.percentage >= 60 ? "🎯" : "📚" }}
+        </div>
+        <h2>Quiz Tamamlandı!</h2>
+      </div>
+
+      <div class="results-score">
+        <div class="score-circle" [class]="getResultClass()">
+          <div class="score-number">{{ quizStats.score }}</div>
+          <div class="score-total">/{{ quizStats.totalQuestions }}</div>
+          <div class="score-percentage">{{ quizStats.percentage }}%</div>
+        </div>
+      </div>
+
+      <div class="results-message" [class]="getResultClass()">
+        {{ getResultMessage() }}
+      </div>
+
+      <div class="results-stats">
+        <div class="stat-item">
+          <div class="stat-icon">✅</div>
+          <div class="stat-label">Doğru</div>
+          <div class="stat-value">{{ quizStats.score }}</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">❌</div>
+          <div class="stat-label">Yanlış</div>
+          <div class="stat-value">{{ quizStats.totalQuestions - quizStats.score }}</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">📊</div>
+          <div class="stat-label">Başarı</div>
+          <div class="stat-value">{{ quizStats.percentage }}%</div>
+        </div>
+      </div>
+
+      <div class="results-actions">
+        <button class="btn btn-primary" (click)="restartQuiz()">
+          <span class="btn-icon">🔄</span>
+          Tekrar Dene
+        </button>
+        <button class="btn btn-secondary" (click)="exitQuiz()">
+          <span class="btn-icon">📚</span>
+          Öğrenmeye Dön
+        </button>
+      </div>
+    </div>
+
+    <!-- Quiz Loading State -->
+    <div class="quiz-loading" *ngIf="quizStarted && !currentWord && words.length === 0">
+      <div class="loading-spinner"></div>
+      <p>Kelimeler yükleniyor...</p>
+    </div>
+
+    <!-- Quiz Error State -->
+    <div class="quiz-error" *ngIf="quizStarted && words.length > 0 && !currentWord">
+      <div class="error-icon">⚠️</div>
+      <h3>Quiz Hazırlanamadı</h3>
+      <p>Yeterli kelime bulunamadı. Lütfen daha sonra tekrar deneyin.</p>
+      <button class="btn btn-primary" (click)="exitQuiz()">Öğrenmeye Dön</button>
+    </div>
+  </div>
+  }
+
+  <!-- ========================
+       SEARCH TAB
+       ======================== -->
+  @if (activeTab === 'search') {
+  <div class="search-container">
+    <div class="search-filters">
+      <input
+        type="text"
+        placeholder="Kelime ara..."
+        [value]="searchTerm"
+        (input)="onSearchChange($any($event).target.value)"
+        class="search-input"
+      />
+
+      <select
+        [(ngModel)]="selectedPos"
+        (change)="onPosFilterChange()"
+        class="pos-filter"
+      >
+        <option *ngFor="let pos of posOptions" [value]="pos.value">
+          {{ pos.label }}
+        </option>
+      </select>
+    </div>
+
+    <div class="word-list">
+      <div *ngFor="let word of filteredWords; trackBy: trackByWord" class="word-item">
+        <h4>{{ word.word }}</h4>
+        <p>{{ word.meaning_tr }}</p>
+        <span class="pos-tag">{{ word.pos }}</span>
+      </div>
+    </div>
+  </div>
+  }
+
+  <!-- ========================
+       REVIEW TAB
+       ======================== -->
+  @if (activeTab === 'review') {
+  <div class="review-container">
+    <h2>Tekrar Edilecek Kelimeler</h2>
+    <div class="unknown-words">
+      <div *ngFor="let word of unknownWords" class="unknown-word-item">
+        <h4>{{ word.word }}</h4>
+        <p>{{ word.meaning_tr }}</p>
+        <button (click)="removeFromUnknown(word)" class="btn btn-sm">Kaldır</button>
+      </div>
+    </div>
+  </div>
+  }
+
+  <!-- ========================
+       ERROR & LOADING STATES
+       ======================== -->
+  
+  <!-- Global Error -->
+  <div class="error" *ngIf="error">
+    {{ error }}
+    <button (click)="retry()">Yeniden Dene</button>
+  </div>
+
+  <!-- Global Loading -->
+  <div *ngIf="loading" class="loading">
+    <div class="loading-spinner"></div>
+    <p>Yükleniyor...</p>
+  </div>
+</div>

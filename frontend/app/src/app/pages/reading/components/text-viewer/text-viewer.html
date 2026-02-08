@@ -1,0 +1,46 @@
+<div class="text-viewer-container">
+  <div *ngFor="let text of texts" class="text-card">
+    <h3>{{ text.title }}</h3>
+    <div
+      class="text-content"
+      [innerHTML]="processTextForClickableWords(text.content)"
+      (click)="onTextClick($event)"
+    ></div>
+    <small class="level-badge">Seviye: {{ text.level }}</small>
+  </div>
+
+  <!-- Kelime anlamları popup'ı -->
+  <div
+    *ngIf="showMeanings"
+    class="word-meanings-popup"
+    [style.left.px]="clickPosition.x"
+    [style.top.px]="clickPosition.y"
+  >
+    <div class="popup-header">
+      <h4>{{ selectedWord }}</h4>
+      <button class="close-btn" (click)="closeMeanings()">&times;</button>
+    </div>
+
+    <div class="meanings-list">
+      <!-- Loading durumu -->
+      <div *ngIf="isLoading" class="loading-message">
+        <div class="spinner"></div>
+        Çeviri yükleniyor...
+      </div>
+
+      <!-- Çeviri sonuçları -->
+      <ng-container *ngIf="!isLoading">
+        <div class="meaning-item" *ngFor="let meaning of wordMeanings">
+          {{ meaning }}
+        </div>
+      </ng-container>
+    </div>
+
+    <!-- Popup kapatmak için overlay -->
+    <div
+      *ngIf="showMeanings"
+      class="popup-overlay"
+      (click)="closeMeanings()"
+    ></div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+[
+ 
+  {
+    "id": 1,
+    "title": "Morning Routine",
+    "audio": "assets/audio/morning-routine.mp3",
+    "transcript": "Every morning, I wake up at 6 AM and go for a jog in the nearby park. After jogging, I take a shower and eat a healthy breakfast."
+  },
+  {
+    "id": 2,
+    "title": "Work Schedule",
+    "audio": "assets/audio/work-schedule.mp3",
+    "transcript": "I start work at 9 AM and usually have meetings until noon. After lunch, I focus on development tasks and emails."
+  }
+]

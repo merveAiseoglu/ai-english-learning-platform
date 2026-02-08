@@ -1,0 +1,754 @@
+<div class="topic-detail" *ngIf="selectedTopicId">
+  <div *ngIf="loading" class="loading">
+    <div class="spinner"></div>
+    <p>Konu detayı yükleniyor...</p>
+  </div>
+
+  <div *ngIf="!loading && topicDetail" class="detail-content">
+    <div class="detail-header">
+      <h2>{{ topicDetail.title }}</h2>
+      <div class="header-decoration"></div>
+    </div>
+
+    <div class="tab-navigation">
+      <button
+        class="tab-button"
+        [class.active]="activeTab === 'explanation'"
+        (click)="setActiveTab('explanation')"
+      >
+        <i class="icon">📖</i> Açıklama
+      </button>
+      <button
+        class="tab-button"
+        [class.active]="activeTab === 'examples'"
+        (click)="setActiveTab('examples')"
+      >
+        <i class="icon">💡</i> Örnekler
+      </button>
+      <button
+        class="tab-button"
+        [class.active]="activeTab === 'rules'"
+        (click)="setActiveTab('rules')"
+      >
+        <i class="icon">📋</i> Kurallar
+      </button>
+      <button
+        class="tab-button"
+        [class.active]="activeTab === 'quizzes'"
+        (click)="setActiveTab('quizzes')"
+      >
+        <i class="icon">🎯</i> Test
+      </button>
+    </div>
+
+    <div class="tab-content">
+      <!-- EXPLANATION PANEL -->
+      <div
+        *ngIf="activeTab === 'explanation'"
+        class="tab-panel explanation-panel"
+      >
+        <div class="explanation-card">
+          <h3>📖 Açıklama</h3>
+          <p class="explanation-text" [innerHTML]="topicDetail.explanation"></p>
+        </div>
+
+        <div
+          class="tips-section"
+          *ngIf="topicDetail.tips && topicDetail.tips.length > 0"
+        >
+          <h4>💡 İpuçları</h4>
+          <div class="tips-grid">
+            <div class="tip-card" *ngFor="let tip of topicDetail.tips">
+              <span class="tip-icon">💡</span>
+              <p [innerHTML]="tip"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXAMPLES PANEL -->
+      <div *ngIf="activeTab === 'examples'" class="tab-panel examples-panel">
+        <div class="example-section">
+          <h3 class="section-title neutral"><span>💡</span> Örnekler</h3>
+          <div class="examples-grid">
+            <div
+              *ngFor="let example of getExamples(); let i = index"
+              class="example-card"
+              [class.correct]="example.type === 'correct'"
+              [class.incorrect]="example.type === 'incorrect'"
+              [class.neutral]="example.type === 'neutral'"
+            >
+              <div class="example-english" [innerHTML]="example.english"></div>
+              <div class="example-turkish">{{ example.turkish }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RULES PANEL -->
+      <div *ngIf="activeTab === 'rules'" class="tab-panel rules-panel">
+        <h4>📋 Kurallar</h4>
+        <div
+          class="rules-list"
+          *ngIf="topicDetail.rules && topicDetail.rules.length > 0"
+        >
+          <div
+            class="rule-item"
+            *ngFor="let rule of topicDetail.rules; let i = index"
+          >
+            <span class="rule-number">{{ i + 1 }}</span>
+            <div class="rule-text" [innerHTML]="rule"></div>
+          </div>
+        </div>
+        <p *ngIf="!topicDetail.rules || topicDetail.rules.length === 0">
+          Bu konu için kural bulunmamaktadır.
+        </p>
+      </div>
+
+      <!-- QUIZ PANEL - DÜZELTİLMİŞ -->
+      <div *ngIf="activeTab === 'quizzes'" class="tab-panel quizzes-panel">
+        <h3>🎯 Konu Değerlendirme Testi</h3>
+
+        <div *ngIf="topicDetail.quizzes && topicDetail.quizzes.length > 0">
+          <div
+            *ngFor="let question of topicDetail.quizzes; let i = index"
+            class="quizzes-question"
+          >
+            <p class="question-text">{{ i + 1 }}. {{ question.question }}</p>
+
+            <ul class="options-list">
+              <li
+                *ngFor="let option of question.options; let j = index"
+                (click)="selectAnswer(i, j)"
+                [class.selected]="quizResponses[i] === j"
+                [class.correct]="
+                  showResults && j === getCorrectAnswerIndex(question)
+                "
+                [class.incorrect]="
+                  showResults &&
+                  quizResponses[i] === j &&
+                  j !== getCorrectAnswerIndex(question)
+                "
+              >
+                {{ option }}
+              </li>
+            </ul>
+          </div>
+
+          <div class="quiz-actions">
+            <button
+              class="submit-button"
+              (click)="submitQuiz()"
+              *ngIf="!showResults"
+              [disabled]="quizResponses.length === 0"
+            >
+              Cevapları Gönder
+            </button>
+
+            <button
+              class="reset-button"
+              (click)="resetQuiz()"
+              *ngIf="showResults"
+            >
+              Testi Tekrarla
+            </button>
+          </div>
+
+          <div class="quiz-result" *ngIf="showResults">
+            <div class="result-card">
+              <h4>📊 Test Sonucu</h4>
+              <div class="score-display">
+                <span class="score-number">{{ correctCount }}</span>
+                <span class="score-divider">/</span>
+                <span class="total-number">{{
+                  topicDetail.quizzes.length
+                }}</span>
+              </div>
+              <div class="score-percentage">
+                %{{
+                  (correctCount / topicDetail.quizzes.length) * 100
+                    | number : "1.0-0"
+                }}
+                Başarı
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          *ngIf="!topicDetail.quizzes || topicDetail.quizzes.length === 0"
+          class="no-quiz"
+        >
+          <div class="no-quiz-icon">🎯</div>
+          <p>Bu konu için test bulunmamaktadır.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!loading && !topicDetail" class="error-state">
+    <div class="error-icon">⚠️</div>
+    <h4>Konu Detayı Bulunamadı</h4>
+    <p>Seçilen konu için detay bilgisi mevcut değil.</p>
+  </div>
+</div>
+
+<style>
+  .topic-detail {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .detail-content {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .detail-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+  }
+
+  .detail-header h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  .header-decoration {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #764ba2;
+  }
+
+  .tab-navigation {
+    display: flex;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .tab-button {
+    flex: 1;
+    padding: 20px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #7f8c8d;
+  }
+
+  .tab-button:hover {
+    background: #e9ecef;
+    color: #2c3e50;
+  }
+
+  .tab-button.active {
+    background: white;
+    color: #667eea;
+    border-bottom: 3px solid #667eea;
+    font-weight: 600;
+  }
+
+  .tab-button .icon {
+    font-size: 18px;
+  }
+
+  .tab-content {
+    padding: 30px;
+  }
+
+  .tab-panel {
+    animation: fadeIn 0.3s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Explanation Panel */
+  .explanation-panel h3 {
+    margin: 0 0 20px 0;
+    color: #2c3e50;
+    font-size: 20px;
+  }
+
+  .explanation-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+  }
+
+  .explanation-card h3 {
+    margin: 0 0 15px 0;
+    color: #2c3e50;
+    font-size: 20px;
+  }
+
+  .explanation-text {
+    margin: 0;
+    line-height: 1.7;
+    font-size: 16px;
+    color: #34495e;
+  }
+
+  .tips-section h4 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  .tips-grid {
+    display: grid;
+    gap: 15px;
+  }
+
+  .tip-card {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .tip-icon {
+    font-size: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .tip-card p {
+    margin: 0;
+    color: #6c5ce7;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  /* Examples Panel */
+  .examples-panel h3 {
+    margin: 0 0 20px 0;
+    color: #2c3e50;
+    font-size: 20px;
+  }
+
+  .example-section {
+    margin-bottom: 30px;
+  }
+
+  .section-title {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-title.correct {
+    color: #27ae60;
+  }
+  .section-title.incorrect {
+    color: #e74c3c;
+  }
+  .section-title.neutral {
+    color: #3498db;
+  }
+
+  .examples-grid {
+    display: grid;
+    gap: 15px;
+  }
+
+  .example-card {
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid;
+    transition: transform 0.2s ease;
+  }
+
+  .example-card:hover {
+    transform: translateX(5px);
+  }
+
+  .example-card.correct {
+    background: #d5f4e6;
+    border-left-color: #27ae60;
+  }
+
+  .example-card.incorrect {
+    background: #fadbd8;
+    border-left-color: #e74c3c;
+  }
+
+  .example-card.neutral {
+    background: #ebf3fd;
+    border-left-color: #3498db;
+  }
+
+  .example-english {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+  }
+
+  .example-turkish {
+    font-size: 14px;
+    color: #7f8c8d;
+    font-style: italic;
+  }
+
+  .example-english mark {
+    background: #f39c12;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+
+  .example-english mark.error {
+    background: #e74c3c;
+  }
+
+  /* Rules Panel */
+  .rules-panel h4 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 18px;
+  }
+
+  .rules-list {
+    display: grid;
+    gap: 15px;
+  }
+
+  .rule-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+  }
+
+  .rule-number {
+    background: #667eea;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .rule-text {
+    color: #2c3e50;
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+
+  /* Quiz Panel */
+  .quizzes-panel h3 {
+    margin: 0 0 25px 0;
+    color: #2c3e50;
+    font-size: 20px;
+  }
+
+  .quizzes-question {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    border: 1px solid #e9ecef;
+  }
+
+  .question-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+
+  .options-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  .options-list li {
+    padding: 15px 20px;
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    color: #2c3e50;
+  }
+
+  .options-list li:hover {
+    border-color: #667eea;
+    background: #f0f2ff;
+  }
+
+  .options-list li.selected {
+    border-color: #667eea;
+    background: #667eea;
+    color: white;
+    font-weight: 500;
+  }
+
+  .options-list li.correct {
+    border-color: #27ae60 !important;
+    background: #27ae60 !important;
+    color: white !important;
+  }
+
+  .options-list li.incorrect {
+    border-color: #e74c3c !important;
+    background: #e74c3c !important;
+    color: white !important;
+  }
+
+  .quiz-actions {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+  }
+
+  .submit-button,
+  .reset-button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .submit-button {
+    background: #667eea;
+    color: white;
+  }
+
+  .submit-button:hover:not(:disabled) {
+    background: #5a6fd8;
+    transform: translateY(-2px);
+  }
+
+  .submit-button:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .reset-button {
+    background: #f39c12;
+    color: white;
+  }
+
+  .reset-button:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+  }
+
+  .quiz-result {
+    margin-top: 30px;
+  }
+
+  .result-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+  }
+
+  .result-card h4 {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .score-display {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .score-number {
+    color: #f1c40f;
+  }
+
+  .score-divider {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .total-number {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .score-percentage {
+    font-size: 18px;
+    font-weight: 500;
+    opacity: 0.9;
+  }
+
+  .no-quiz {
+    text-align: center;
+    padding: 60px 20px;
+    color: #7f8c8d;
+  }
+
+  .no-quiz-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+  }
+
+  .no-quiz p {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  /* Error State */
+  .error-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #e74c3c;
+  }
+
+  .error-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  .error-state h4 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+  }
+
+  .error-state p {
+    margin: 0;
+    color: #7f8c8d;
+    font-size: 14px;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .topic-detail {
+      padding: 15px;
+    }
+
+    .detail-header {
+      padding: 25px 20px;
+    }
+
+    .detail-header h2 {
+      font-size: 24px;
+    }
+
+    .tab-navigation {
+      flex-direction: column;
+    }
+
+    .tab-button {
+      padding: 15px;
+    }
+
+    .tab-content {
+      padding: 20px;
+    }
+
+    .explanation-card {
+      padding: 20px;
+    }
+
+    .tip-card {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .rule-item {
+      padding: 15px;
+    }
+
+    .quizzes-question {
+      padding: 20px;
+    }
+
+    .score-display {
+      font-size: 36px;
+    }
+
+    .result-card {
+      padding: 25px;
+    }
+  }
+</style>

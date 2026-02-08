@@ -1,0 +1,24 @@
+<!-- Dashboard Template -->
+
+<div class="dashboard-container">
+  <h2>📊 Progress Overview</h2>
+
+  <div class="stat-box">
+    Total words studied: <strong>{{ totalWords }}</strong>
+  </div>
+
+  <div class="stat-box">
+    Last practice date: <strong>{{ lastPracticeDate || "Not yet" }}</strong>
+  </div>
+
+  <div class="stat-box">
+    Streak (consecutive days): <strong>{{ currentStreak }}</strong>
+  </div>
+
+  <div class="stat-box">
+    Practiced today?
+    <strong [style.color]="practicedToday ? 'green' : 'red'">
+      {{ practicedToday ? "Yes 🎉" : "No 😔" }}
+    </strong>
+  </div>
+</div>

@@ -1,0 +1,234 @@
+.text-viewer-container {
+  padding: 20px;
+  position: relative;
+}
+
+.text-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.text-card h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.4em;
+}
+
+.text-content {
+  line-height: 1.8;
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.level-badge {
+  background: #007bff;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* Clickable words - Strongest selectors */
+.text-content span[data-word] {
+  cursor: pointer;
+  transition: color 0.2s ease;
+  border-radius: 3px;
+  padding: 1px 2px;
+  color: inherit;
+  display: inline;
+}
+
+/* Hover effects - Very specific selectors */
+.text-viewer-container .text-content span[data-word]:hover,
+.text-card .text-content span[data-word]:hover,
+div.text-content span.clickable-word:hover,
+.text-content span.clickable-word[data-word]:hover {
+  color: #007bff !important;
+  background-color: rgba(0, 123, 255, 0.1) !important;
+}
+
+.text-viewer-container .text-content span[data-word]:focus,
+.text-card .text-content span[data-word]:focus,
+div.text-content span.clickable-word:focus,
+.text-content span.clickable-word[data-word]:focus {
+  color: #007bff !important;
+  background-color: rgba(0, 123, 255, 0.1) !important;
+  outline: none;
+}
+
+/* Fallback - general clickable-word class'ı için */
+.clickable-word {
+  cursor: pointer;
+  transition: color 0.2s ease;
+  border-radius: 3px;
+  padding: 1px 2px;
+  color: inherit;
+}
+
+.clickable-word:hover {
+  color: #007bff !important;
+}
+
+/* Popup styles */
+.word-meanings-popup {
+  position: fixed;
+  background: white;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  min-width: 200px;
+  max-width: 300px;
+  transform: translate(-50%, -100%);
+  margin-top: -10px;
+}
+
+.popup-header {
+  background: #007bff;
+  color: white;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px 6px 0 0;
+}
+
+.popup-header h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+}
+
+.meanings-list {
+  padding: 15px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.meaning-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.meaning-item:last-child {
+  border-bottom: none;
+}
+
+/* Loading styles */
+.loading-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  color: #666;
+  font-size: 14px;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+/* Quiz buton stili */
+.quiz-button {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 20px auto;
+  min-width: 280px;
+  justify-content: center;
+}
+
+.quiz-button:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+.quiz-button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 123, 255, 0.3);
+}
+
+.quiz-button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .word-meanings-popup {
+    position: fixed;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0;
+    max-width: 90vw;
+  }
+  
+  .quiz-button {
+    min-width: 250px;
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}

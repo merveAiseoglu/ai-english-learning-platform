@@ -1,0 +1,182 @@
+[
+  {
+    "word_en": "book",
+    "word_tr": "kitap",
+    "definition_en": "A set of written or printed pages bound together.",
+    "definition_tr": "Yazılı veya basılı sayfalardan oluşan ciltli eser."
+  },
+  {
+    "word_en": "apple",
+    "word_tr": "elma",
+    "definition_en": "A round fruit with red or green skin and a white inside.",
+    "definition_tr": "Kırmızı ya da yeşil kabuklu, beyaz etli yuvarlak bir meyve."
+  },
+  {
+    "word_en": "car",
+    "word_tr": "araba",
+    "definition_en": "A vehicle with four wheels, used for transporting people.",
+    "definition_tr": "İnsan taşımak için kullanılan dört tekerlekli taşıt."
+  },
+  {
+    "word_en": "water",
+    "word_tr": "su",
+    "definition_en": "A clear liquid essential for life.",
+    "definition_tr": "Hayat için gerekli olan berrak sıvı."
+  },
+  {
+    "word_en": "tree",
+    "word_tr": "ağaç",
+    "definition_en": "A tall plant with a trunk and branches.",
+    "definition_tr": "Gövdesi ve dalları olan uzun bitki."
+  },
+  {
+    "word_en": "computer",
+    "word_tr": "bilgisayar",
+    "definition_en": "An electronic device used for processing data.",
+    "definition_tr": "Veri işlemek için kullanılan elektronik cihaz."
+  },
+  {
+    "word_en": "house",
+    "word_tr": "ev",
+    "definition_en": "A building for human habitation.",
+    "definition_tr": "İnsanların yaşaması için yapılmış bina."
+  },
+  {
+    "word_en": "teacher",
+    "word_tr": "öğretmen",
+    "definition_en": "A person who educates students.",
+    "definition_tr": "Öğrencilere bilgi veren kişi."
+  },
+  {
+    "word_en": "sun",
+    "word_tr": "güneş",
+    "definition_en": "The star at the center of our solar system.",
+    "definition_tr": "Güneş sistemimizin merkezindeki yıldız."
+  },
+  {
+    "word_en": "dog",
+    "word_tr": "köpek",
+    "definition_en": "A loyal domestic animal often kept as a pet.",
+    "definition_tr": "Evcil olarak beslenen sadık hayvan."
+  },
+  {
+    "word_en": "school",
+    "word_tr": "okul",
+    "definition_en": "A place where people go to learn.",
+    "definition_tr": "İnsanların öğrenmek için gittiği yer."
+  },
+  {
+    "word_en": "phone",
+    "word_tr": "telefon",
+    "definition_en": "A device used to talk to others over long distances.",
+    "definition_tr": "Uzaktaki kişilerle konuşmayı sağlayan cihaz."
+  },
+  {
+    "word_en": "music",
+    "word_tr": "müzik",
+    "definition_en": "A form of art using sound and rhythm.",
+    "definition_tr": "Ses ve ritim kullanılarak oluşturulan sanat türü."
+  },
+  {
+    "word_en": "chair",
+    "word_tr": "sandalye",
+    "definition_en": "A piece of furniture for sitting.",
+    "definition_tr": "Oturmak için kullanılan mobilya."
+  },
+  {
+    "word_en": "table",
+    "word_tr": "masa",
+    "definition_en": "A flat surface supported by legs, used for working or eating.",
+    "definition_tr": "Çalışmak veya yemek yemek için kullanılan düz yüzeyli mobilya."
+  },
+  {
+    "word_en": "bread",
+    "word_tr": "ekmek",
+    "definition_en": "A staple food made from flour and water.",
+    "definition_tr": "Un ve sudan yapılan temel yiyecek."
+  },
+  {
+    "word_en": "window",
+    "word_tr": "pencere",
+    "definition_en": "An opening in a wall to let in light and air.",
+    "definition_tr": "Işık ve hava almak için duvarda açılan boşluk."
+  },
+  {
+    "word_en": "pen",
+    "word_tr": "kalem",
+    "definition_en": "A tool used for writing with ink.",
+    "definition_tr": "Mürekkeple yazı yazmaya yarayan araç."
+  },
+  {
+    "word_en": "road",
+    "word_tr": "yol",
+    "definition_en": "A path for vehicles and people to travel.",
+    "definition_tr": "Araçların ve insanların seyahat ettiği güzergâh."
+  },
+  {
+    "word_en": "flower",
+    "word_tr": "çiçek",
+    "definition_en": "The colorful part of a plant that produces seeds.",
+    "definition_tr": "Bitkilerin tohum üreten renkli bölümü."
+  },
+  {
+    "word_en": "milk",
+    "word_tr": "süt",
+    "definition_en": "A white liquid produced by mammals, used as food.",
+    "definition_tr": "Memeliler tarafından üretilen, besin olarak tüketilen beyaz sıvı."
+  },
+  {
+    "word_en": "door",
+    "word_tr": "kapı",
+    "definition_en": "A movable structure used to open or close an entrance.",
+    "definition_tr": "Bir girişin açılıp kapanmasını sağlayan yapı."
+  },
+  {
+    "word_en": "sky",
+    "word_tr": "gökyüzü",
+    "definition_en": "The space above the Earth where clouds and the sun appear.",
+    "definition_tr": "Bulutların ve güneşin görüldüğü yeryüzünün üzerindeki alan."
+  },
+  {
+    "word_en": "fish",
+    "word_tr": "balık",
+    "definition_en": "An animal that lives in water and has fins and gills.",
+    "definition_tr": "Suda yaşayan, yüzgeçleri ve solungaçları olan hayvan."
+  },
+  {
+    "word_en": "shirt",
+    "word_tr": "gömlek",
+    "definition_en": "A piece of clothing for the upper body.",
+    "definition_tr": "Üst vücut için giyilen kıyafet."
+  },
+  {
+    "word_en": "eye",
+    "word_tr": "göz",
+    "definition_en": "The organ used for seeing.",
+    "definition_tr": "Görme işlevini gerçekleştiren organ."
+  },
+  {
+    "word_en": "friend",
+    "word_tr": "arkadaş",
+    "definition_en": "A person you know well and like.",
+    "definition_tr": "İyi tanıdığın ve sevdiğin kişi."
+  },
+  {
+    "word_en": "family",
+    "word_tr": "aile",
+    "definition_en": "A group of people related by blood or marriage.",
+    "definition_tr": "Kan bağı veya evlilik yoluyla bağlı olan insan grubu."
+  },
+  {
+    "word_en": "city",
+    "word_tr": "şehir",
+    "definition_en": "A large and permanent human settlement.",
+    "definition_tr": "Büyük ve kalıcı insan yerleşimi."
+  },
+  {
+    "word_en": "job",
+    "word_tr": "iş",
+    "definition_en": "A paid position of regular employment.",
+    "definition_tr": "Düzenli maaş karşılığı yapılan meslek veya görev."
+  }
+]

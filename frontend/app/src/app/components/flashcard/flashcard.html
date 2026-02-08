@@ -1,0 +1,56 @@
+<!-- Flashcard Component Template -->
+<!-- 3D flip card showing word on front, details on back -->
+
+<div class="flashcard-container" *ngIf="currentWord">
+
+  <!-- Flashcard: click anywhere to flip -->
+  <div class="flashcard" [class.flipped]="showBack" (click)="flipCard()">
+
+    <!-- Front Face: word, part of speech, meaning -->
+    <div class="flashcard-face flashcard-front">
+      <h2>{{ currentWord.word }}</h2>
+      <p class="pos">{{ currentWord.pos }}</p>
+      <p class="meaning">{{ currentWord.meaning_tr }}</p>
+
+      <!-- Sound button: stopPropagation prevents the card from flipping -->
+      <button
+        class="btn-sound"
+        (click)="$event.stopPropagation(); playCurrentWord()"
+        aria-label="Play word pronunciation"
+      >
+        🔊
+      </button>
+    </div>
+
+    <!-- Back Face: example sentences, synonyms, antonyms -->
+    <div class="flashcard-face flashcard-back">
+      <h3>Example Sentences</h3>
+      <p><em>EN:</em> {{ currentWord.example_en }}</p>
+      <p><em>TR:</em> {{ currentWord.example_tr }}</p>
+
+      <p>
+        <strong>Synonyms:</strong>
+        {{ currentWord.synonyms?.join(", ") || "-" }}
+      </p>
+      <p>
+        <strong>Antonyms:</strong>
+        {{ currentWord.antonyms?.join(", ") || "-" }}
+      </p>
+    </div>
+  </div>
+
+  <!-- Action buttons -->
+  <div class="flashcard-controls">
+    <button (click)="markKnown()" class="btn btn-success">Known ✔️</button>
+    <button (click)="markUnknown()" class="btn btn-danger">Unknown ❌</button>
+    <button (click)="nextCard()" class="btn btn-primary">Next →</button>
+  </div>
+
+  <!-- Progress counter -->
+  <p class="progress">Word {{ currentIndex + 1 }} / {{ words.length }}</p>
+</div>
+
+<!-- Shown when no words are loaded -->
+<div *ngIf="!currentWord" class="loading-message">
+  Loading words... or no words available.
+</div>

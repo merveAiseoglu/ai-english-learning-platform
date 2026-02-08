@@ -1,0 +1,164 @@
+<!-- level-selector.component.html -->
+<div class="level-selector">
+  <h2>Grammar Seviyenizi Seçin</h2>
+
+  <div *ngIf="loading" class="loading">
+    <div class="spinner"></div>
+    <p>Seviyeler yükleniyor...</p>
+  </div>
+
+  <div *ngIf="!loading" class="level-cards">
+    <div
+      *ngFor="let level of levels"
+      class="level-card"
+      [class.selected]="isSelected(level.id)"
+      (click)="selectLevel(level.id)"
+    >
+      <div class="level-header">
+        <h3>{{ level.name }}</h3>
+        <div class="level-badge">{{ level.order }}</div>
+      </div>
+      <p class="level-description">{{ level.description }}</p>
+      <div class="level-indicator" *ngIf="isSelected(level.id)">
+        <i class="icon-check">✓</i>
+        <span>Seçildi</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .level-selector {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .level-selector h2 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
+
+  .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .level-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .level-card {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+
+  .level-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: #3498db;
+  }
+
+  .level-card.selected {
+    border-color: #27ae60;
+    background: #f8fff9;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(39, 174, 96, 0.2);
+  }
+
+  .level-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .level-header h3 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .level-badge {
+    background: #3498db;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .level-card.selected .level-badge {
+    background: #27ae60;
+  }
+
+  .level-description {
+    color: #7f8c8d;
+    margin: 0;
+    line-height: 1.5;
+    font-size: 14px;
+  }
+
+  .level-indicator {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    color: #27ae60;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .icon-check {
+    margin-right: 5px;
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    .level-cards {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    .level-card {
+      padding: 20px;
+    }
+  }
+</style>

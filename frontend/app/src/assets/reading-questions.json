@@ -1,0 +1,154 @@
+[
+  {
+    "textId": 1,
+    "questions": [
+      {
+        "question": "Where does the writer live?",
+        "options": [
+          "In a big city",
+          "Near the mountains",
+          "In a village in Italy",
+          "Near the sea"
+        ],
+        "correctAnswer": "Near the mountains",
+        "location": "My family and I live in a small house near the mountains."
+      },
+      {
+        "question": "What do the writer and their brothers enjoy doing together?",
+        "options": [
+          "Playing board games",
+          "Cooking with grandmother",
+          "Going on long walks",
+          "Watching TV"
+        ],
+        "correctAnswer": "Going on long walks",
+        "location": "On weekends, my brothers and I go for long walks in the forest."
+      }
+    ]
+  },
+  {
+    "textId": 2,
+    "questions": [
+      {
+        "question": "What did Keith do at Wrigley Field?",
+        "options": [
+          "He visited the Chicago Water Tower",
+          "He took a walk in Jackson Park",
+          "He took a tour and watched a baseball game",
+          "He climbed the Willis Tower"
+        ],
+        "correctAnswer": "He took a tour and watched a baseball game",
+        "location": "One of my favorite places was Wrigley Field, where I took a tour and watched a baseball game."
+      },
+      {
+        "question": "Why is the Chicago Water Tower important?",
+        "options": [
+          "It is the tallest building in Chicago",
+          "It was built for the World’s Fair",
+          "It survived the Great Chicago Fire",
+          "It is located in Jackson Park"
+        ],
+        "correctAnswer": "It survived the Great Chicago Fire",
+        "location": "The Chicago Water Tower is a historic building that survived the Great Chicago Fire of 1871."
+      },
+      {
+        "question": "What did Keith think about climbing the Willis Tower?",
+        "options": [
+          "It was too difficult and not worth it",
+          "It was boring and tiring",
+          "He didn't finish the climb",
+          "It was challenging but worth the effort"
+        ],
+        "correctAnswer": "It was challenging but worth the effort",
+        "location": "Climbing the Willis Tower was tough, but the view from the top made it all worth it."
+      }
+    ]
+  },
+  {
+    "textId": 3,
+    "questions": [
+      {
+        "question": "Where did the writer and their friends stay in Paris?",
+        "options": [
+          "At a friend’s house",
+          "In a tent near the river",
+          "In a beautiful hotel in the Latin Quarter",
+          "In a museum"
+        ],
+        "correctAnswer": "In a beautiful hotel in the Latin Quarter",
+        "location": "We stayed at a beautiful hotel in the Latin Quarter, close to many cafés and bookshops."
+      },
+      {
+        "question": "What was Steve’s favorite part of the vacation?",
+        "options": [
+          "Visiting museums",
+          "Eating hotel breakfast",
+          "Drinking wine",
+          "Walking along the river"
+        ],
+        "correctAnswer": "Eating hotel breakfast",
+        "location": "Steve loved the hotel breakfasts the most – fresh croissants, fruit, and coffee every morning!"
+      }
+    ]
+  },
+  {
+  "textId": 4,
+  "questions": [
+    {
+      "question": "According to the text, what is one of the main concerns about social media's impact on human relationships?",
+      "options": [
+        "It makes communication too expensive",
+        "It may undermine our ability to form face-to-face connections",
+        "It requires too much technical knowledge",
+        "It only works in certain countries"
+      ],
+      "correctAnswer": "It may undermine our ability to form face-to-face connections",
+      "location": "However, critics argue that this constant digital interaction may be undermining our ability to form meaningful, face-to-face connections."
+    },
+    {
+      "question": "What does the term 'echo chambers' refer to in the context of social media?",
+      "options": [
+        "Loud notification sounds from apps",
+        "Repeated posting of the same content",
+        "Exposure primarily to information that reinforces existing beliefs",
+        "Technical problems with audio features"
+      ],
+      "correctAnswer": "Exposure primarily to information that reinforces existing beliefs",
+      "location": "Furthermore, the phenomenon of 'echo chambers' – where users are primarily exposed to information and opinions that reinforce their existing beliefs – has contributed to political polarization and the spread of misinformation."
+    },
+    {
+      "question": "Which demographic group is particularly affected by increased feelings of isolation due to social media use?",
+      "options": [
+        "Elderly people who avoid technology",
+        "Business professionals",
+        "Young people who have grown up in the digital age",
+        "Rural communities with poor internet"
+      ],
+      "correctAnswer": "Young people who have grown up in the digital age",
+      "location": "Research suggests that excessive social media use can lead to increased feelings of isolation and depression, particularly among young people who have grown up in the digital age."
+    },
+    {
+      "question": "According to the text, what positive aspect of social media is mentioned regarding marginalized communities?",
+      "options": [
+        "It provides them with free internet access",
+        "It gives voice to those who previously lacked platforms to express their views",
+        "It offers them employment opportunities",
+        "It protects them from online harassment"
+      ],
+      "correctAnswer": "It gives voice to those who previously lacked platforms to express their views",
+      "location": "Despite these challenges, social media has also democratized information sharing and given voice to marginalized communities who previously lacked platforms to express their views."
+    },
+    {
+      "question": "What does the author suggest as the solution to social media's challenges?",
+      "options": [
+        "Completely avoiding all social media platforms",
+        "Using only one social media platform",
+        "Finding a balance between digital benefits and authentic human interaction",
+        "Restricting social media use to business purposes only"
+      ],
+      "correctAnswer": "Finding a balance between digital benefits and authentic human interaction",
+      "location": "The key lies in finding a balance between embracing the benefits of digital communication while preserving the essential human elements of authentic, meaningful interaction."
+    }
+  ]
+}
+]

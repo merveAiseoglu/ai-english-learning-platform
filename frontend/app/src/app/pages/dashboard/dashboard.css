@@ -1,0 +1,17 @@
+/**
+ * Dashboard Component Styles
+ * Simple statistics display with colored boxes
+ */
+
+.dashboard-container {
+  padding: 2rem;
+  font-family: sans-serif;
+}
+
+.stat-box {
+  background-color: #f9f9f9;
+  border-left: 6px solid #4caf50;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+}

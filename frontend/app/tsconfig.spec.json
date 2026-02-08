@@ -1,0 +1,13 @@
+/* Test/Spec TypeScript Configuration */
+/* Extends base tsconfig.json for unit testing */
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/spec",
+    "types": ["jasmine"]
+  },
+  "include": [
+    "src/**/*.spec.ts",
+    "src/**/*.d.ts"
+  ]
+}

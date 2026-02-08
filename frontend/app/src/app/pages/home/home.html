@@ -1,0 +1,103 @@
+<!-- Home Page Template -->
+
+<!-- Hero Section -->
+<div class="hero-section">
+  <div class="hero-content">
+    <h1>🌟 Welcome to Your Language Learning Journey!</h1>
+    <p class="hero-subtitle">
+      Discover the most effective and fun way to learn English
+    </p>
+    <div class="cta-buttons">
+      <a routerLink="/vocabulary" class="btn btn-primary">
+        📚 Start Vocabulary
+      </a>
+      <button (click)="setTabFromHome('test')" class="btn btn-secondary">
+        🎯 Take a Quiz
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Features Section -->
+<div class="features-section">
+  <h2>🎯 What Will You Learn?</h2>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">📚</div>
+      <h3>Vocabulary</h3>
+      <p>
+        Build your vocabulary with thousands of words. Interactive quizzes and fun exercises.
+      </p>
+      <a routerLink="/vocabulary" class="feature-link">Explore →</a>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">📝</div>
+      <h3>Grammar</h3>
+      <p>
+        Learn English grammar rules through examples and practice.
+      </p>
+      <a routerLink="/grammar" class="feature-link">Explore →</a>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">📖</div>
+      <h3>Reading</h3>
+      <p>
+        Improve your reading comprehension with texts from different levels.
+      </p>
+      <a routerLink="/reading" class="feature-link">Explore →</a>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🎧</div>
+      <h3>Listening</h3>
+      <p>
+        Enhance your listening skills with audio files and exercises.
+      </p>
+      <a routerLink="/listening" class="feature-link">Explore →</a>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🎤</div>
+      <h3>Speaking</h3>
+      <p>
+        Improve your speaking skills with pronunciation practice.
+      </p>
+      <a routerLink="/speaking" class="feature-link">Explore →</a>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">✍️</div>
+      <h3>Writing</h3>
+      <p>
+        Perfect your English writing skills with writing exercises.
+      </p>
+      <a routerLink="/writing" class="feature-link">Explore →</a>
+    </div>
+  </div>
+</div>
+
+<!-- Statistics Section -->
+<div class="stats-section">
+  <h2>📊 Track Your Progress</h2>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-number">0</div>
+      <div class="stat-label">Words Learned</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">0</div>
+      <div class="stat-label">Quizzes Completed</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">0</div>
+      <div class="stat-label">Study Days</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">Beginner</div>
+      <div class="stat-label">Current Level</div>
+    </div>
+  </div>
+</div>

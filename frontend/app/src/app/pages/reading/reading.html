@@ -1,0 +1,72 @@
+<!-- Seviye seçme -->
+<app-level-select *ngIf="showLevelSelect" (levelChosen)="onLevelChosen($event)">
+</app-level-select>
+
+<!-- Metin ve sorular -->
+<div *ngIf="!showLevelSelect && currentText">
+  <div class="level-info">
+    <h2>{{ currentText.title }} - Seviye: {{ selectedLevel }}</h2>
+    <button (click)="resetLevelSelection()" class="change-level-btn">
+      Seviye Değiştir
+    </button>
+  </div>
+
+  <!-- Kelime tıklama özellikli metin görüntüleyici -->
+  <app-text-viewer [texts]="[currentText]"></app-text-viewer>
+
+  <button
+    (click)="showQuestions = true"
+    *ngIf="!showQuestions && currentQuestions.length > 0"
+  >
+    📘 Okuduğunu Anlama Sorularına Geç →
+  </button>
+
+  <div *ngIf="showQuestions && currentQuestions.length > 0">
+    <h3>Okuduğunu Anlama Soruları</h3>
+
+    <div
+      *ngFor="let question of currentQuestions; let i = index"
+      style="margin-bottom: 1.5rem"
+    >
+      <p>
+        <strong>{{ i + 1 }}. {{ question.question }}</strong>
+      </p>
+      <ul>
+        <li *ngFor="let option of question.options">
+          <label>
+            <input
+              type="radio"
+              name="question{{ i }}"
+              [value]="option"
+              (change)="selectAnswer(i, option)"
+              [disabled]="checked"
+            />
+            {{ option }}
+          </label>
+        </li>
+      </ul>
+
+      <div *ngIf="checked">
+        <span
+          [style.color]="
+            selectedAnswers[i] === question.correctAnswer ? 'green' : 'red'
+          "
+        >
+          {{
+            selectedAnswers[i] === question.correctAnswer
+              ? "✔ Doğru"
+              : "❌ Yanlış. Doğru cevap: " + question.correctAnswer
+          }}
+        </span>
+      </div>
+    </div>
+
+    <button (click)="checkAnswers()" [disabled]="checked">
+      Cevapları Kontrol Et
+    </button>
+
+    <div *ngIf="checked" style="margin-top: 1rem">
+      <strong>Puanınız: {{ totalScore }}/{{ currentQuestions.length }}</strong>
+    </div>
+  </div>
+</div>

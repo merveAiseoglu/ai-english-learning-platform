@@ -1,0 +1,96 @@
+{
+  "categories": [
+    {
+      "name": "Genel",
+      "words": {
+        "kolay": ["apple", "book", "car", "dog", "eat", "friend", "good", "happy", "love", "money"],
+        "orta": ["beautiful", "computer", "family", "important", "language", "question", "remember", "student"],
+        "zor": ["entrepreneur", "conscientious", "ubiquitous", "procrastinate", "idiosyncrasy", "juxtaposition"]
+      },
+      "sentences": {
+        "kolay": [
+          "I love eating apples.",
+          "This is my favorite book.",
+          "The car is red.",
+          "The dog is barking.",
+          "I want to eat something."
+        ],
+        "orta": [
+          "This computer is very fast.",
+          "My family is important to me.",
+          "Learning a new language is fun.",
+          "The student asked a question."
+        ],
+        "zor": [
+          "The entrepreneur started a new business.",
+          "She is a conscientious worker.",
+          "Smartphones are ubiquitous nowadays.",
+          "Don't procrastinate your homework.",
+          "His style is full of idiosyncrasy.",
+          "The painting shows a juxtaposition of light and dark."
+        ]
+      }
+    },
+    {
+      "name": "Seyahat",
+      "words": {
+        "kolay": ["map", "hotel", "fly", "train", "ticket", "beach", "city", "guide"],
+        "orta": ["reservation", "destination", "adventure", "luggage", "passport", "souvenir", "transportation"],
+        "zor": ["itinerary", "accommodation", "bureaucracy", "archipelago", "disembark", "jet lag"]
+      },
+      "sentences": {
+        "kolay": [
+          "Where is the hotel?",
+          "I want to buy a ticket.",
+          "We are going to the beach.",
+          "I lost my map.",
+          "Let's fly to another city."
+        ],
+        "orta": [
+          "I made a reservation at the hotel.",
+          "Our destination is Italy.",
+          "This adventure is exciting.",
+          "Where is my luggage?"
+        ],
+        "zor": [
+          "Check your itinerary before you leave.",
+          "Accommodation is included in the package.",
+          "We had to deal with a lot of bureaucracy.",
+          "The Philippines is an archipelago.",
+          "We will disembark at the next port.",
+          "I'm suffering from jet lag."
+        ]
+      }
+    },
+    {
+      "name": "İş Dünyası",
+      "words": {
+        "kolay": ["job", "meet", "email", "work", "team", "boss", "sale"],
+        "orta": ["agreement", "company", "customer", "employee", "marketing", "presentation", "strategy"],
+        "zor": ["negotiation", "collaboration", "deliverable", "stakeholder", "synergy", "paradigm"]
+      },
+      "sentences": {
+        "kolay": [
+          "I love my job.",
+          "We will meet at 3 PM.",
+          "I sent you an email.",
+          "I work in an office."
+        ],
+        "orta": [
+          "The company signed a new agreement.",
+          "We need to understand the customer's needs.",
+          "The employee gave a great presentation.",
+          "We should update our marketing strategy."
+        ],
+        "zor": [
+          "The negotiation lasted for hours.",
+          "Collaboration is key to success.",
+          "Please deliver the final deliverable by Friday.",
+          "The stakeholder approved the plan.",
+          "The teams achieved great synergy.",
+          "This idea changed the entire paradigm."
+        ]
+      }
+    }
+  ]
+}

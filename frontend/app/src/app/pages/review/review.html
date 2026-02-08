@@ -1,0 +1,139 @@
+<div class="review-container" *ngIf="questions.length > 0">
+  <div class="card" [class.flipped]="showBack">
+    <!-- Ön Yüz: İngilizce Kelime -->
+    <div class="card-face card-front">
+      {{ currentQuestion.word }}
+      <small class="pos">{{ currentQuestion.pos }}</small>
+    </div>
+
+    <!-- Arka Yüz: Türkçe Anlam -->
+    <div class="card-face card-back">
+      {{ currentQuestion.meaning_tr }}
+    </div>
+  </div>
+
+  <!-- Kartı Çevir Butonu -->
+  <button class="flip-btn" (click)="flipCard()">
+    Kartı {{ showBack ? "Gizle" : "Çevir" }}
+  </button>
+
+  <!-- Seçenekler -->
+  <div class="options">
+    <button
+      *ngFor="let option of options"
+      [ngClass]="{
+        correct:
+          selectedOption === option && option === currentQuestion.meaning_tr,
+        incorrect:
+          selectedOption === option && option !== currentQuestion.meaning_tr
+      }"
+      (click)="selectOption(option)"
+      [disabled]="showAnswer"
+    >
+      {{ option }}
+    </button>
+  </div>
+
+  <!-- Sonraki Soru Butonu -->
+  <button
+    class="flip-btn"
+    (click)="nextQuestion()"
+    *ngIf="showAnswer && currentIndex < questions.length - 1"
+  >
+    Sonraki Soru →
+  </button>
+
+  <!-- Quiz Tamamlandı Mesajı -->
+  <div *ngIf="showAnswer && currentIndex === questions.length - 1">
+    <p>Quiz tamamlandı 🎉</p>
+    <p>Skorunuz: {{ score }} / {{ questions.length }}</p>
+    <button (click)="restartQuiz()">Tekrar Başlat</button>
+  </div>
+</div>
+
+<!-- Yükleniyor veya veri yoksa -->
+<div *ngIf="questions.length === 0" class="loading">Yükleniyor...</div>
+
+<style>
+  .review-container {
+    max-width: 600px;
+    margin: 1rem auto;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .card {
+    width: 300px;
+    height: 180px;
+    margin: 1rem auto;
+    perspective: 1000px;
+    position: relative;
+  }
+  .card-face {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-front {
+    background: #f9f9f9;
+    color: #333;
+  }
+  .card-back {
+    background: #4caf50;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  .card.flipped .card-front {
+    transform: rotateY(180deg);
+  }
+  .card.flipped .card-back {
+    transform: rotateY(0deg);
+  }
+  .pos {
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-left: 0.5rem;
+    color: #666;
+  }
+  .options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+  }
+  .options button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .options button.correct {
+    background-color: #4caf50;
+    color: white;
+  }
+  .options button.incorrect {
+    background-color: #f44336;
+    color: white;
+  }
+  .flip-btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0.5rem;
+  }
+  .loading {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 2rem;
+  }
+</style>
